@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>عبق التراث — الدليل الشامل للمناقشة</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #c8943a;
+  --gold-light: #e8b96a;
+  --gold-pale: #fdf0d8;
+  --brown-dark: #1e0f00;
+  --brown-mid: #4a2200;
+  --brown-light: #8b5e3c;
+  --cream: #fdf6ec;
+  --cream-dark: #f0dfc0;
+  --text-dark: #1a0f00;
+  --text-mid: #3d2b1a;
+  --white: #ffffff;
+  --green: #1b5e2e;
+  --green-light: #d4edda;
+  --blue: #1a3a5c;
+  --blue-light: #d1e8f5;
+  --red: #7a1a1a;
+  --red-light: #fde8e8;
+  --shadow: 0 4px 24px rgba(0,0,0,0.10);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  line-height: 1.85;
+  font-size: 15px;
+}
+
+/* ─── HERO ─── */
+.hero {
+  background: linear-gradient(160deg, var(--brown-dark) 0%, #3b1600 60%, #1e0800 100%);
+  padding: 70px 20px 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content:'';
+  position:absolute; inset:0;
+  background: repeating-linear-gradient(60deg,transparent,transparent 40px,rgba(200,148,58,.04) 40px,rgba(200,148,58,.04) 41px);
+}
+.hero-inner { position:relative; z-index:1; max-width:900px; margin:0 auto; }
+.hero-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  color:var(--brown-dark); padding:6px 22px;
+  border-radius:30px; font-size:.8rem; font-weight:900;
+  letter-spacing:2px; text-transform:uppercase; margin-bottom:22px;
+}
+.hero h1 {
+  font-family:'Amiri', serif;
+  font-size:3.5rem; font-weight:700; color:var(--gold-light);
+  margin-bottom:10px; line-height:1.2;
+}
+.hero h1 em { font-style:normal; color:#fff; }
+.hero-en { font-size:1rem; color:rgba(255,255,255,.55); margin-bottom:6px; direction:ltr; }
+.hero-sub { font-size:.9rem; color:rgba(255,255,255,.4); }
+.hero-tags { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin-top:24px; }
+.htag {
+  background:rgba(200,148,58,.15); border:1px solid rgba(200,148,58,.35);
+  color:var(--gold-light); padding:5px 16px; border-radius:20px; font-size:.8rem; font-weight:600;
+}
+.hero-source-bar {
+  margin-top:28px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap;
+}
+.src-pill {
+  display:flex; align-items:center; gap:8px;
+  background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.15);
+  color:rgba(255,255,255,.75); padding:8px 18px; border-radius:10px; font-size:.82rem;
+}
+.src-pill span { font-size:1.1rem; }
+
+/* ─── STICKY NAV ─── */
+.sidenav-wrap {
+  display:flex; align-items:flex-start;
+  max-width:1300px; margin:0 auto; padding:0 16px;
+}
+.sidenav {
+  width:220px; flex-shrink:0; position:sticky; top:10px;
+  background:var(--white); border:1px solid var(--cream-dark);
+  border-radius:14px; padding:16px 12px; margin-top:28px;
+  box-shadow:var(--shadow); max-height:90vh; overflow-y:auto;
+}
+.sidenav h3 {
+  font-size:.72rem; font-weight:900; letter-spacing:2px; text-transform:uppercase;
+  color:var(--gold); margin-bottom:12px; padding-bottom:8px;
+  border-bottom:1px solid var(--cream-dark);
+}
+.sidenav a {
+  display:block; padding:7px 10px; border-radius:8px;
+  text-decoration:none; color:var(--text-mid); font-size:.82rem; font-weight:600;
+  transition:.15s; margin-bottom:2px;
+}
+.sidenav a:hover { background:var(--gold-pale); color:var(--brown-mid); }
+.sidenav .nav-group { margin-top:10px; }
+.sidenav .nav-group-label {
+  font-size:.65rem; font-weight:900; letter-spacing:1.5px; text-transform:uppercase;
+  color:var(--brown-light); margin:10px 0 4px 4px;
+}
+.main-content { flex:1; padding:28px 0 60px 24px; min-width:0; }
+
+/* ─── SECTION ─── */
+section { margin-bottom:48px; }
+
+.sec-head {
+  display:flex; align-items:center; gap:14px;
+  background:linear-gradient(135deg,var(--brown-dark),var(--brown-mid));
+  border-radius:14px; padding:20px 24px; margin-bottom:24px;
+}
+.sec-icon {
+  width:48px; height:48px; border-radius:12px;
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.4rem; flex-shrink:0; box-shadow:0 4px 12px rgba(200,148,58,.4);
+}
+.sec-title h2 { color:var(--gold-light); font-size:1.4rem; font-weight:900; }
+.sec-title p { color:rgba(255,255,255,.5); font-size:.8rem; direction:ltr; margin-top:2px; }
+
+/* ─── SOURCE BADGE ─── */
+.from-badge {
+  display:inline-flex; align-items:center; gap:6px;
+  font-size:.72rem; font-weight:700; letter-spacing:1px; text-transform:uppercase;
+  padding:3px 12px; border-radius:20px; margin-bottom:14px;
+}
+.from-word { background:#e8f0fe; color:#1a47a8; border:1px solid #b3c6f7; }
+.from-pptx { background:#fff0e8; color:#a83a1a; border:1px solid #f7c6a8; }
+.from-both { background:var(--gold-pale); color:var(--brown-mid); border:1px solid var(--gold); }
+
+/* ─── BILINGUAL BLOCK ─── */
+.bili {
+  display:grid; grid-template-columns:1fr 1fr;
+  border:2px solid var(--gold); border-radius:12px; overflow:hidden; margin-bottom:18px;
+  box-shadow:var(--shadow);
+}
+.bili .ar { background:linear-gradient(135deg,var(--cream),var(--cream-dark)); padding:20px 22px; border-left:2px solid var(--gold); }
+.bili .en { background:var(--white); padding:20px 22px; direction:ltr; text-align:left; }
+.bili .lang { display:block; font-size:.68rem; font-weight:900; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+.bili p { font-size:.9rem; color:var(--text-mid); }
+.bili strong { color:var(--brown-dark); }
+
+/* ─── CARDS ─── */
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-bottom:18px; }
+.card {
+  background:var(--white); border:1px solid var(--cream-dark);
+  border-radius:12px; padding:20px; border-top:4px solid var(--gold);
+  box-shadow:0 2px 10px rgba(0,0,0,.05); transition:.2s;
+}
+.card:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,0,0,.09); }
+.card .ico { font-size:1.6rem; margin-bottom:10px; }
+.card h3 { font-size:.95rem; font-weight:800; color:var(--brown-dark); margin-bottom:6px; }
+.card .en-sub { display:block; font-size:.75rem; color:var(--brown-light); font-weight:400; direction:ltr; }
+.card p { font-size:.84rem; color:var(--text-mid); }
+
+/* ─── TABLE ─── */
+.tbl { width:100%; border-collapse:collapse; border-radius:12px; overflow:hidden; box-shadow:var(--shadow); margin:16px 0; font-size:.84rem; }
+.tbl thead tr { background:linear-gradient(135deg,var(--brown-dark),var(--brown-mid)); color:var(--gold-light); text-align:right; }
+.tbl th, .tbl td { padding:12px 16px; }
+.tbl tbody tr { border-bottom:1px solid var(--cream-dark); }
+.tbl tbody tr:nth-child(even) { background:var(--cream); }
+.tbl tbody tr:hover { background:var(--gold-pale); }
+
+/* ─── HIGHLIGHT BOXES ─── */
+.box { border-radius:12px; padding:20px 22px; margin:16px 0; }
+.box-gold { background:var(--gold-pale); border:2px solid var(--gold); }
+.box-blue { background:var(--blue-light); border:2px solid #6eaed4; direction:ltr; text-align:left; }
+.box-green { background:var(--green-light); border:2px solid #5caa7a; }
+.box-red { background:var(--red-light); border:2px solid #d47a7a; }
+.box h4 { font-size:.95rem; font-weight:800; margin-bottom:8px; color:var(--brown-dark); }
+.box-blue h4 { color:var(--blue); }
+.box-green h4 { color:var(--green); }
+.box p, .box li { font-size:.88rem; color:var(--text-mid); }
+.box ul { padding-right:18px; }
+.box-blue ul { padding-right:0; padding-left:18px; }
+
+/* ─── CODE BLOCK ─── */
+.code {
+  background:#1a1a2e; color:#e8d5b0; border-radius:10px;
+  padding:18px 20px; font-family:monospace; font-size:.82rem;
+  direction:ltr; text-align:left; overflow-x:auto; margin:14px 0;
+  border:1px solid rgba(200,148,58,.2);
+}
+.code .kw { color:#c8943a; } .code .fn { color:#68d391; }
+.code .str { color:#fc8181; } .code .cm { color:#718096; }
+
+/* ─── UML VISUAL ─── */
+.uml-box {
+  background:#1a1a2e; color:#c8d6e8; border-radius:12px;
+  padding:22px; font-family:monospace; font-size:.8rem;
+  direction:ltr; text-align:left; overflow-x:auto; margin:16px 0;
+  border:2px solid rgba(200,148,58,.25); line-height:1.7;
+}
+.uml-box .nd { color:#68d391; font-weight:700; }
+.uml-box .ar2 { color:#c8943a; }
+.uml-box .lb { color:#fc8181; font-style:italic; }
+.uml-box .cm { color:#718096; }
+.uml-box .kw { color:#76e4f7; }
+
+/* ─── FLOW ─── */
+.flow { position:relative; padding-right:30px; }
+.flow::before {
+  content:''; position:absolute; right:11px; top:16px; bottom:16px;
+  width:2px; background:linear-gradient(to bottom,var(--gold),var(--gold-light));
+}
+.fstep { display:flex; gap:14px; margin-bottom:16px; align-items:flex-start; }
+.fnum {
+  width:30px; height:30px; border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  color:var(--brown-dark); display:flex; align-items:center; justify-content:center;
+  font-weight:900; font-size:.8rem; flex-shrink:0;
+  margin-right:-13px; position:relative; z-index:1;
+  box-shadow:0 2px 10px rgba(200,148,58,.45);
+}
+.fstep-body h4 { font-weight:800; color:var(--brown-dark); font-size:.9rem; margin-bottom:3px; }
+.fstep-body p { font-size:.83rem; color:var(--text-mid); }
+
+/* ─── BADGES ─── */
+.bdg { display:inline-block; padding:2px 10px; border-radius:20px; font-size:.72rem; font-weight:700; }
+.bdg-gold { background:var(--gold-pale); color:var(--brown-mid); border:1px solid var(--gold); }
+.bdg-green { background:var(--green-light); color:var(--green); }
+.bdg-blue { background:var(--blue-light); color:var(--blue); }
+.bdg-red { background:var(--red-light); color:var(--red); }
+
+/* ─── Q&A ─── */
+.qa-wrap { background:linear-gradient(160deg,var(--brown-dark),#2a0f00); padding:50px 20px; }
+.qa-inner { max-width:900px; margin:0 auto; }
+.qa-card { background:rgba(255,255,255,.05); border:1px solid rgba(200,148,58,.25); border-radius:12px; margin-bottom:12px; overflow:hidden; }
+.qa-q {
+  padding:18px 20px; cursor:pointer; display:flex;
+  justify-content:space-between; align-items:flex-start; gap:12px;
+  background:rgba(200,148,58,.07); transition:.2s;
+}
+.qa-q:hover { background:rgba(200,148,58,.13); }
+.qa-qtxt h4 { color:var(--gold-light); font-size:.95rem; font-weight:700; margin-bottom:3px; }
+.qa-qtxt p { color:rgba(255,255,255,.45); font-size:.75rem; direction:ltr; }
+.qa-cat-tag { display:inline-block; background:rgba(200,148,58,.2); color:var(--gold-light); font-size:.68rem; padding:1px 8px; border-radius:10px; font-weight:700; margin-bottom:3px; }
+.qa-arrow { color:var(--gold); font-size:1.1rem; flex-shrink:0; transition:transform .25s; }
+.qa-ans { max-height:0; overflow:hidden; transition:max-height .35s ease, padding .25s; padding:0 20px; }
+.qa-ans.open { max-height:700px; padding:18px 20px; }
+.qa-ar {
+  background:rgba(255,255,255,.06); border-right:3px solid var(--gold);
+  border-radius:8px; padding:14px 16px; margin-bottom:10px;
+  color:rgba(255,255,255,.88); font-size:.88rem;
+}
+.qa-en {
+  background:rgba(255,255,255,.03); border-left:3px solid var(--gold-light);
+  border-radius:8px; padding:14px 16px;
+  color:rgba(255,255,255,.6); font-size:.83rem; direction:ltr; text-align:left;
+}
+.qa-section-title {
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(200,148,58,.2); border:1px solid rgba(200,148,58,.4);
+  color:var(--gold-light); padding:5px 16px; border-radius:20px;
+  font-size:.75rem; font-weight:900; text-transform:uppercase; letter-spacing:1.5px;
+  margin: 24px 0 14px;
+}
+
+/* ─── STATS ─── */
+.stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:14px; margin:20px 0; }
+.stat {
+  background:linear-gradient(135deg,var(--brown-dark),var(--brown-mid));
+  border-radius:12px; padding:20px 12px; text-align:center;
+  border:1px solid rgba(200,148,58,.3);
+}
+.stat-n { font-size:2.2rem; font-weight:900; color:var(--gold-light); line-height:1; }
+.stat-l { font-size:.78rem; color:rgba(255,255,255,.7); margin-top:4px; }
+.stat-s { font-size:.68rem; color:rgba(255,255,255,.35); direction:ltr; }
+
+/* ─── CHAPTER DIVIDER ─── */
+.chap-divider {
+  background:linear-gradient(135deg,var(--brown-mid),var(--brown-dark));
+  border-radius:12px; padding:14px 22px; margin:30px 0 20px;
+  display:flex; align-items:center; gap:12px;
+}
+.chap-divider .num {
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  color:var(--brown-dark); width:36px; height:36px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-weight:900; font-size:1rem; flex-shrink:0;
+}
+.chap-divider h3 { color:var(--gold-light); font-size:1rem; font-weight:800; }
+.chap-divider p { color:rgba(255,255,255,.5); font-size:.78rem; }
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:900px){
+  .sidenav-wrap { flex-direction:column; }
+  .sidenav { width:100%; position:static; margin:12px 0; max-height:none; }
+  .main-content { padding:20px 0; }
+  .bili { grid-template-columns:1fr; }
+  .bili .ar { border-left:none; border-bottom:2px solid var(--gold); }
+}
+@media(max-width:600px){
+  .hero h1 { font-size:2.2rem; }
+  .stats { grid-template-columns:repeat(2,1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">🎓 دليل المناقشة الشامل</div>
+    <h1>عبق <em>التراث</em></h1>
+    <p class="hero-en">Abaq Al-Turath Restaurant Management System</p>
+    <p class="hero-sub">جامعة الأقصى · قسم علم الحاسوب · بكالوريوس · مايو 2025</p>
+    <div class="hero-tags">
+      <span class="htag">صالح حمادة جرغون</span>
+      <span class="htag">عبدالله محمد أبو فياض</span>
+    </div>
+    <div class="hero-source-bar">
+      <div class="src-pill"><span>📄</span> ملف التقرير الكامل (Word/PDF) — 5 فصول</div>
+      <div class="src-pill"><span>📊</span> ملف العرض التقديمي (PowerPoint) — 48 شريحة</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ LAYOUT ═══════════════════════════ -->
+<div class="sidenav-wrap">
+
+  <!-- SIDENAV -->
+  <nav class="sidenav">
+    <h3>📚 الفصول</h3>
+    <div class="nav-group">
+      <div class="nav-group-label">ملف Word/PDF</div>
+      <a href="#ch1">📖 الفصل 1 — المقدمة</a>
+      <a href="#ch2">📚 الفصل 2 — الأدبيات</a>
+      <a href="#ch3">⚙️ الفصل 3 — المنهجية</a>
+      <a href="#ch4">🏗️ الفصل 4 — التصميم</a>
+      <a href="#uml">📐 مخططات UML</a>
+      <a href="#ch5">✅ الفصل 5 — الخاتمة</a>
+    </div>
+    <div class="nav-group">
+      <div class="nav-group-label">ملف PowerPoint</div>
+      <a href="#pptx-overview">📋 نظرة عامة</a>
+      <a href="#pptx-tech">⚙️ التقنيات</a>
+      <a href="#pptx-impl">🔧 التطبيق</a>
+      <a href="#pptx-security">🔒 الأمان</a>
+      <a href="#pptx-testing">✅ الاختبار</a>
+      <a href="#pptx-future">🚀 المستقبل</a>
+    </div>
+    <div class="nav-group">
+      <div class="nav-group-label">المناقشة</div>
+      <a href="#qa">❓ أسئلة المناقشة</a>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="main-content">
+
+    <!-- ═══ INTRO STATS ═══ -->
+    <section>
+      <div class="stats">
+        <div class="stat"><div class="stat-n">5</div><div class="stat-l">فصول في التقرير</div><div class="stat-s">Chapters in Report</div></div>
+        <div class="stat"><div class="stat-n">48</div><div class="stat-l">شريحة PPTX</div><div class="stat-s">Slides in Presentation</div></div>
+        <div class="stat"><div class="stat-n">13</div><div class="stat-l">API Endpoint</div><div class="stat-s">RESTful APIs</div></div>
+        <div class="stat"><div class="stat-n">24</div><div class="stat-l">صنف بالقائمة</div><div class="stat-s">Menu Items</div></div>
+        <div class="stat"><div class="stat-n">5</div><div class="stat-l">مخططات UML</div><div class="stat-s">UML Diagrams</div></div>
+        <div class="stat"><div class="stat-n">9/9</div><div class="stat-l">اختبار ناجح</div><div class="stat-s">Tests Passed</div></div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════
+         CHAPTER 1 — INTRODUCTION
+    ════════════════════════════════════════════════════════════ -->
+    <section id="ch1">
+      <div class="sec-head">
+        <div class="sec-icon">📖</div>
+        <div class="sec-title">
+          <h2>الفصل الأول — المقدمة</h2>
+          <p>Chapter 1: Introduction — من ملف التقرير Word/PDF</p>
+        </div>
+      </div>
+      <span class="from-badge from-word">📄 Word/PDF Report — Chapter 1</span>
+
+      <!-- 1.1 Background -->
+      <div class="chap-divider">
+        <div class="num">1.1</div>
+        <div><h3>الخلفية | Background</h3><p>Context and motivation for the project</p></div>
+      </div>
+      <div class="bili">
+        <div class="ar">
+          <span class="lang">العربية</span>
+          <p>مطعم <strong>عبق التراث (Heritage Fragrance)</strong> يمثل ثقافة وتراثاً فلسطينياً أصيلاً. المطاعم التراثية الفلسطينية تواجه ضغطاً متزايداً للتحول الرقمي. قبل هذا المشروع، كانت الحجوزات تُدار يدوياً، وتحديث القائمة يتطلب تدخلاً يدوياً، ولا يوجد نظام مركزي لتتبع بيانات العملاء. المشروع يعالج هذه الفجوة بحل رقمي شامل.</p>
+        </div>
+        <div class="en">
+          <span class="lang">English</span>
+          <p><strong>Abaq Al-Turath (Heritage Fragrance)</strong> represents authentic Palestinian culinary heritage. Heritage restaurants face increasing digital transformation pressure. Before this system, reservations were manual, menu updates required physical intervention, and no centralized customer tracking existed. This project bridges that gap with a comprehensive digital solution.</p>
+        </div>
+      </div>
+      <div class="box box-gold">
+        <h4>🍽️ الأطباق الفلسطينية المميزة في المشروع | Featured Palestinian Dishes</h4>
+        <p>مسخن (Musakhan) — منسف (Mansaf) — مقلوبة (Makloubeh) — كبة نابلسية (Nabulsi Kibbeh) — حمص فتة — ورق عنب — مشويات — قطايف</p>
+      </div>
+
+      <!-- 1.2 Problem -->
+      <div class="chap-divider">
+        <div class="num">1.2</div>
+        <div><h3>المشكلة | Problem Statement</h3><p>5 core problems identified in the report</p></div>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="ico">📋</div>
+          <h3>إدارة حجوزات يدوية <span class="en-sub">Manual Reservation Management</span></h3>
+          <p>تكرار الحجز، سجلات ورقية معرضة للضياع، لا تحديث فوري، صعوبة إدارة أوقات الذروة</p>
+        </div>
+        <div class="card">
+          <div class="ico">🍽️</div>
+          <h3>قائمة طعام ثابتة <span class="en-sub">Static Menu Limitations</span></h3>
+          <p>لا يمكن تحديث القائمة بدون تدخل تقني، لا تحكم في الأسعار والتوافر، صعوبة إبراز الأطباق الموسمية</p>
+        </div>
+        <div class="card">
+          <div class="ico">👤</div>
+          <h3>لا إدارة لبيانات العملاء <span class="en-sub">No Customer Data</span></h3>
+          <p>لا تاريخ للحجوزات، لا تتبع للتفضيلات، لا تحليلات لبيانات الأعمال</p>
+        </div>
+        <div class="card">
+          <div class="ico">💰</div>
+          <h3>مدفوعات نقدية فقط <span class="en-sub">Cash-Only Payments</span></h3>
+          <p>تضييق قاعدة العملاء، قيود مصرفية فلسطينية، لا بدائل رقمية متاحة</p>
+        </div>
+        <div class="card">
+          <div class="ico">🌐</div>
+          <h3>لا وجود رقمي <span class="en-sub">No Digital Presence</span></h3>
+          <p>غير مرئي للعملاء الذين يبحثون أونلاين، لا منصة رقمية قابلة للبحث</p>
+        </div>
+      </div>
+
+      <!-- 1.3 Objectives -->
+      <div class="chap-divider">
+        <div class="num">1.3</div>
+        <div><h3>الأهداف | Aim & Objectives</h3><p>5 specific, measurable objectives</p></div>
+      </div>
+      <div class="flow">
+        <div class="fstep">
+          <div class="fnum">1</div>
+          <div class="fstep-body">
+            <h4>نظام حجز أونلاين | Online Reservation System</h4>
+            <p>اختيار التاريخ والوقت وعدد الضيوف، تعيين رقم الطاولة تلقائياً، منع الحجز المزدوج، الطلبات الخاصة</p>
+          </div>
+        </div>
+        <div class="fstep">
+          <div class="fnum">2</div>
+          <div class="fstep-body">
+            <h4>إدارة قائمة ديناميكية | Dynamic Menu Management</h4>
+            <p>CRUD كامل للمدير، دعم ثنائي اللغة (عربي/إنجليزي)، تحديث التوافر فوري، إدارة الصور والأسعار</p>
+          </div>
+        </div>
+        <div class="fstep">
+          <div class="fnum">3</div>
+          <div class="fstep-body">
+            <h4>مصادقة آمنة | Secure Authentication</h4>
+            <p>تحكم بالوصول قائم على الأدوار (Customer/Admin)، تشفير bcrypt، إدارة الجلسات</p>
+          </div>
+        </div>
+        <div class="fstep">
+          <div class="fnum">4</div>
+          <div class="fstep-body">
+            <h4>تكامل طرق الدفع | Payment Integration</h4>
+            <p>دفع نقدي عند الوصول، دفع بالبيتكوين مع توليد عنوان تلقائي</p>
+          </div>
+        </div>
+        <div class="fstep">
+          <div class="fnum">5</div>
+          <div class="fstep-body">
+            <h4>لوحة تحكم إدارية | Admin Dashboard</h4>
+            <p>إحصائيات فورية، إدارة المستخدمين والحجوزات والقائمة</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1.4 Scope -->
+      <div class="chap-divider">
+        <div class="num">1.4</div>
+        <div><h3>النطاق | Scope</h3><p>What's included and what's excluded</p></div>
+      </div>
+      <div class="cards">
+        <div class="card" style="border-top-color:#5caa7a">
+          <div class="ico">✅</div>
+          <h3>ما يشمله المشروع <span class="en-sub">Included in Scope</span></h3>
+          <p>• تطبيق ويب متعدد المتصفحات<br>• واجهة العميل والمدير<br>• عمليات CRUD كاملة<br>• نشر محلي على Laragon<br>• دعم عربي/إنجليزي</p>
+        </div>
+        <div class="card" style="border-top-color:#d47a7a">
+          <div class="ico">❌</div>
+          <h3>ما لا يشمله <span class="en-sub">Excluded from Scope</span></h3>
+          <p>• تطبيق موبايل iOS/Android<br>• بوابة دفع Bitcoin حقيقية<br>• نظام إدارة متعدد الفروع<br>• تكامل إشعارات البريد الإلكتروني</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════
+         CHAPTER 2 — LITERATURE REVIEW
+    ════════════════════════════════════════════════════════════ -->
+    <section id="ch2">
+      <div class="sec-head">
+        <div class="sec-icon">📚</div>
+        <div class="sec-title">
+          <h2>الفصل الثاني — مراجعة الأدبيات</h2>
+          <p>Chapter 2: Literature Review — من ملف التقرير Word/PDF</p>
+        </div>
+      </div>
+      <span class="from-badge from-word">📄 Word/PDF Report — Chapter 2</span>
+
+      <div class="bili">
+        <div class="ar">
+          <span class="lang">ما الهدف من مراجعة الأدبيات؟</span>
+          <p>توثيق الدراسات والأبحاث السابقة المتعلقة بالموضوع، وإثبات أن المشروع يملأ فجوة حقيقية غير مُغطاة في الأدبيات الموجودة.</p>
+        </div>
+        <div class="en">
+          <span class="lang">Why Literature Review?</span>
+          <p>To document prior research and studies related to the topic, and to prove that this project fills a genuine gap not covered by existing literature.</p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="ico">🏪</div>
+          <h3>أنظمة إدارة المطاعم <span class="en-sub">2.1 Restaurant Management Systems</span></h3>
+          <p><strong>Brown & Lee (2020):</strong> الأنظمة الحديثة تحسّن الكفاءة 23% وتقلل أخطاء الحجز 18%. OpenTable (1998) رائدة في الحجوزات أونلاين. Toast POS وSquare تُثبت تفوق السحابة على الحلول المحلية.</p>
+        </div>
+        <div class="card">
+          <div class="ico">📅</div>
+          <h3>أنظمة الحجز الأونلاين <span class="en-sub">2.2 Online Reservation Systems</span></h3>
+          <p><strong>Kim & Park (2018):</strong> 72% من جيل الألفية يفضل الحجز أونلاين. <strong>NRA (2022):</strong> المطاعم بحجز أونلاين تحقق 30% زيادة في الحجوزات. تقنية Database Transactions + Optimistic Locking.</p>
+        </div>
+        <div class="card">
+          <div class="ico">💳</div>
+          <h3>التجارة الإلكترونية عربياً <span class="en-sub">2.3 E-Commerce in MENA</span></h3>
+          <p><strong>Statista (2023):</strong> سوق التجارة الإلكترونية MENA سيبلغ $49 مليار بحلول 2025. القيود المصرفية الفلسطينية تجعل Bitcoin بديلاً عملياً — <strong>Nakamoto (2008)</strong>.</p>
+        </div>
+      </div>
+
+      <div class="box box-gold">
+        <h4>🔍 الفجوة التي يملأها المشروع | Research Gap</h4>
+        <p>الحلول التجارية الموجودة (OpenTable, Toast POS) صُممت للسياق الغربي ولا تدعم: العربية RTL، تصنيف المأكولات الفلسطينية التراثية، خيارات الدفع المحلية. هذا المشروع يعالج هذه الثغرة بحل مُصمَّم خصيصاً للبيئة الفلسطينية.</p>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════
+         CHAPTER 3 — METHODOLOGY
+    ════════════════════════════════════════════════════════════ -->
+    <section id="ch3">
+      <div class="sec-head">
+        <div class="sec-icon">⚙️</div>
+        <div class="sec-title">
+          <h2>الفصل الثالث — المنهجية</h2>
+          <p>Chapter 3: Methodology — من ملف التقرير Word/PDF</p>
+        </div>
+      </div>
+      <span class="from-badge from-word">📄 Word/PDF Report — Chapter 3</span>
+
+      <div class="cards">
+        <div class="card">
+          <div class="ico">🔬</div>
+          <h3>منهجية البحث <span class="en-sub">Research Methodology</span></h3>
+          <p>Design Science Research (DSR) — Hevner et al. (2004): المخرج الرئيسي هو أداة IT وظيفية تحل مشكلة عملية. بدأ بتحليل المتطلبات ثم تصميم تدريجي ثم تقييم.</p>
+        </div>
+        <div class="card">
+          <div class="ico">🔄</div>
+          <h3>نهج التطوير <span class="en-sub">Development Approach</span></h3>
+          <p>Agile-Inspired Incremental Development: تحليل المتطلبات → تصميم النظام → تطوير الواجهة → تطوير الخادم → تطبيق قاعدة البيانات → اختبار التكامل.</p>
+        </div>
+      </div>
+
+      <div class="chap-divider">
+        <div class="num">3.3</div>
+        <div><h3>الأدوات والتقنيات | Tools & Technologies</h3><p>Complete technology stack with justifications</p></div>
+      </div>
+
+      <table class="tbl">
+        <thead><tr><th>المكون</th><th>التقنية/الأداة</th><th>الإصدار</th><th>مبرر الاختيار</th></tr></thead>
+        <tbody>
+          <tr><td>الواجهة الأمامية</td><td>HTML5, CSS3, JavaScript</td><td>ES6+</td><td>لا تبعيات، أداء عالٍ</td></tr>
+          <tr><td>الخادم</td><td>PHP</td><td>8.0+</td><td>تكامل MySQL ممتاز، bcrypt مُدمج</td></tr>
+          <tr><td>قاعدة البيانات</td><td>MySQL</td><td>8.0</td><td>ACID، مفاتيح أجنبية، UTF8MB4</td></tr>
+          <tr><td>خادم الويب</td><td>Apache (Laragon)</td><td>2.4</td><td>بيئة تطوير Windows متكاملة</td></tr>
+          <tr><td>إدارة DB</td><td>phpMyAdmin</td><td>5.x</td><td>واجهة رسومية لإدارة MySQL</td></tr>
+          <tr><td>الخط</td><td>Cairo (Google Fonts)</td><td>—</td><td>دعم العربية RTL المثالي</td></tr>
+          <tr><td>نمط API</td><td>RESTful</td><td>—</td><td>فصل الواجهة عن الخادم، JSON</td></tr>
+          <tr><td>المصادقة</td><td>Session + bcrypt</td><td>—</td><td>أمان صناعي لكلمات المرور</td></tr>
+        </tbody>
+      </table>
+
+      <div class="box box-blue">
+        <h4>🏗️ Three-Tier Architecture</h4>
+        <p><strong>Presentation Layer:</strong> HTML/CSS/JS pages (index, menu, dashboard, admin-dashboard, login, register)<br>
+        <strong>Application Layer:</strong> PHP RESTful API — 13 endpoints — business logic & processing<br>
+        <strong>Data Layer:</strong> MySQL — 3 tables: users, menu_items, reservations<br>
+        <strong>Communication:</strong> HTTP REST + JSON · PDO for secure DB queries</p>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════
+         CHAPTER 4 — DESIGN & IMPLEMENTATION
+    ════════════════════════════════════════════════════════════ -->
+    <section id="ch4">
+      <div class="sec-head">
+        <div class="sec-icon">🏗️</div>
+        <div class="sec-title">
+          <h2>الفصل الرابع — التصميم والتطبيق</h2>
+          <p>Chapter 4: Design & Implementation — من ملف التقرير Word/PDF</p>
+        </div>
+      </div>
+      <span class="from-badge from-word">📄 Word/PDF Report — Chapter 4</span>
+
+      <!-- FUNCTIONAL REQUIREMENTS -->
+      <div class="chap-divider">
+        <div class="num">4.2</div>
+        <div><h3>تحليل النظام | System Analysis</h3><p>Functional & Non-Functional Requirements</p></div>
+      </div>
+      <table class="tbl">
+        <thead><tr><th>ID</th><th>المتطلب الوظيفي</th><th>Functional Requirement</th></tr></thead>
+        <tbody>
+          <tr><td>FR-01</td><td>تسجيل حساب باسم كامل وإيميل ورقم هاتف وكلمة مرور</td><td>Register with full name, email, phone, password</td></tr>
+          <tr><td>FR-02</td><td>مصادقة المستخدمين وتوفير وصول قائم على الأدوار</td><td>Authenticate users with role-based access (customer/admin)</td></tr>
+          <tr><td>FR-03</td><td>عرض القائمة بالتصنيفات (فلسطيني، مشاوي، حلويات، مشروبات)</td><td>Display menu with categories: Palestinian, Grills, Sweets, Beverages</td></tr>
+          <tr><td>FR-04</td><td>إنشاء حجوزات بالتاريخ والوقت وعدد الضيوف (1-20)</td><td>Create reservations with date, time, guests (1-20), special requests</td></tr>
+          <tr><td>FR-05</td><td>اختيار طريقة الدفع (نقدي أو Bitcoin)</td><td>Support Cash and Bitcoin payment method selection</td></tr>
+          <tr><td>FR-06</td><td>إدارة عناصر القائمة من قِبل المدير (CRUD)</td><td>Admin CRUD operations for menu items</td></tr>
+          <tr><td>FR-07</td><td>تحديث حالات الحجوزات من قِبل المدير</td><td>Admin view and update reservation statuses</td></tr>
+          <tr><td>FR-08</td><td>عرض إحصائيات فورية في لوحة التحكم</td><td>Real-time statistics on admin dashboard</td></tr>
+        </tbody>
+      </table>
+      <table class="tbl" style="margin-top:14px">
+        <thead><tr><th>ID</th><th>المتطلب غير الوظيفي</th><th>Non-Functional Requirement</th></tr></thead>
+        <tbody>
+          <tr><td>NFR-01</td><td>الأمان: bcrypt + Prepared Statements</td><td>Security: bcrypt hashing + SQL injection prevention</td></tr>
+          <tr><td>NFR-02</td><td>الأداء: تحميل الصفحات أقل من 3 ثوانٍ</td><td>Performance: pages load within 3 seconds</td></tr>
+          <tr><td>NFR-03</td><td>قابلية الاستخدام: دعم العربية RTL والإنجليزية</td><td>Usability: Arabic RTL + English bilingual support</td></tr>
+          <tr><td>NFR-04</td><td>الموثوقية: تحقق من المدخلات ورسائل خطأ واضحة</td><td>Reliability: input validation + meaningful error messages</td></tr>
+          <tr><td>NFR-05</td><td>التوافق: Chrome, Firefox, Edge</td><td>Compatibility: modern browsers support</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════
+         UML DIAGRAMS — DETAILED
+    ════════════════════════════════════════════════════════════ -->
+    <section id="uml">
+      <div class="sec-head">
+        <div class="sec-icon">📐</div>
+        <div class="sec-title">
+          <h2>مخططات UML — شرح شامل ومفصل</h2>
+          <p>UML Diagrams — From Both Report & Presentation</p>
+        </div>
+      </div>
+      <span class="from-badge from-both">📄+📊 كلا الملفين</span>
+
+      <div class="box box-blue">
+        <h4>What is UML? — Unified Modeling Language</h4>
+        <p>A standardized visual language for designing and documenting software systems. Used before and during development to model structure (static) and behavior (dynamic). The 5 diagrams used in this project cover different perspectives of the system.</p>
+      </div>
+
+      <!-- ── USE CASE ── -->
+      <div class="chap-divider">
+        <div class="num">①</div>
+        <div><h3>مخطط حالات الاستخدام | Use Case Diagram (§4.3)</h3><p>WHO does WHAT — Actors & their interactions with the system</p></div>
+      </div>
+      <div class="bili">
+        <div class="ar"><span class="lang">الهدف</span><p>يُظهر <strong>مَن</strong> يتفاعل مع النظام (الممثلون) و<strong>ماذا</strong> يستطيعون فعله. يحدد حدود النظام وعلاقات الفاعلين بحالات الاستخدام، بما فيها علاقات «include» الإلزامية و«extend» الاختيارية.</p></div>
+        <div class="en"><span class="lang">Purpose</span><p>Shows <strong>WHO</strong> interacts with the system (Actors) and <strong>WHAT</strong> they can do. Defines system boundary and actor-to-use-case relationships, including mandatory «include» and optional «extend» relationships.</p></div>
+      </div>
+      <div class="uml-box">
+┌──────────────────────── <span class="kw">Restaurant Management System</span> ────────────────────────┐
+│                                                                            │
+│    <span class="nd">«Actor»</span>                                                    <span class="nd">«Actor»</span>    │
+│    Customer                                                     Admin      │
+│       │                                                           │        │
+│       ├──→ (Register Account)                                     │        │
+│       ├──→ (Login) ────────────── «include» ──→ (Validate Creds) │        │
+│       ├──→ (Browse Menu)                                          │        │
+│       ├──→ (Create Reservation) ──«include»──→ (Select Payment)  │        │
+│       │         │                    │                            │        │
+│       │         └──«extend»──→ (Generate BTC Address)            │        │
+│       ├──→ (View My Reservations)                                 │        │
+│       └──→ (Cancel Reservation)                                   │        │
+│                                                                   │        │
+│                                           ├──→ (Admin Login)      │        │
+│                                           ├──→ (Manage Menu)      │        │
+│                                           ├──→ (Manage Reservations)       │
+│                                           ├──→ (Manage Users)     │        │
+│                                           └──→ (View Statistics)  │        │
+└────────────────────────────────────────────────────────────────────────────┘
+
+<span class="lb">«include»</span>  = mandatory — base use case ALWAYS requires included one
+<span class="lb">«extend»</span>   = optional  — only occurs under specific conditions
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="ico">👤</div>
+          <h3>الممثل: العميل <span class="en-sub">Actor: Customer</span></h3>
+          <p>7 حالات استخدام: تسجيل، دخول، تصفح القائمة، إنشاء حجز، اختيار الدفع، عرض الحجوزات، الإلغاء</p>
+        </div>
+        <div class="card">
+          <div class="ico">👑</div>
+          <h3>الممثل: المدير <span class="en-sub">Actor: Admin</span></h3>
+          <p>كل صلاحيات العميل + إدارة القائمة (CRUD)، إدارة الحجوزات، إدارة المستخدمين، الإحصائيات</p>
+        </div>
+        <div class="card">
+          <div class="ico">🔗</div>
+          <h3>العلاقة «include» <span class="en-sub">«include» Relationship</span></h3>
+          <p>مثال: "تسجيل الدخول" يتضمن دائماً "التحقق من بيانات الاعتماد" — علاقة إلزامية لا تُغفَل</p>
+        </div>
+        <div class="card">
+          <div class="ico">➕</div>
+          <h3>العلاقة «extend» <span class="en-sub">«extend» Relationship</span></h3>
+          <p>مثال: "إنشاء حجز" قد يمتد ليشمل "توليد عنوان Bitcoin" — فقط إذا اختار المستخدم Bitcoin</p>
+        </div>
+      </div>
+
+      <!-- ── CLASS DIAGRAM ── -->
+      <div class="chap-divider">
+        <div class="num">②</div>
+        <div><h3>مخطط الفئات | Class Diagram (§4.4)</h3><p>STRUCTURE — Classes, attributes, methods & relationships</p></div>
+      </div>
+      <div class="bili">
+        <div class="ar"><span class="lang">الهدف</span><p>يُظهر <strong>البنية الثابتة</strong> للنظام — الكلاسات وخصائصها (-) ووظائفها (+) والعلاقات بينها. هو المخطط الأكثر ارتباطاً ببرمجة OOP.</p></div>
+        <div class="en"><span class="lang">Purpose</span><p>Shows the <strong>static structure</strong> of the system — classes with private attributes (-), public methods (+), and relationships. Most closely tied to OOP (Object-Oriented Programming).</p></div>
+      </div>
+      <div class="uml-box">
+┌───────────────────────┐  1        *  ┌──────────────────────────────┐
+│        <span class="nd">User</span>           │ ───────────→ │        <span class="nd">Reservation</span>          │
+├───────────────────────┤             ├──────────────────────────────┤
+│ - id: int             │             │ - id: int                    │
+│ - fullName: string    │             │ - userId: int (FK) ──────── →│
+│ - email: string       │             │ - reservationDate: date      │
+│ - phone: string       │             │ - reservationTime: time      │
+│ - password: string    │             │ - guestsCount: int (1-20)    │
+│ - role: <span class="lb">enum</span>(user,admin)│             │ - tableNumber: string (auto) │
+│ - createdAt: datetime │             │ - paymentMethod: <span class="lb">enum</span>        │
+├───────────────────────┤             │ - bitcoinAddress: string     │
+│ + register()          │             │ - status: <span class="lb">enum</span>              │
+│ + login()             │             │ - specialRequests: text      │
+│ + logout()            │             ├──────────────────────────────┤
+│ + updateProfile()     │             │ + create()                   │
+└───────────────────────┘             │ + updateStatus()             │
+                                      │ + cancel()                   │
+┌───────────────────────┐             │ + assignTable()              │
+│       <span class="nd">MenuItem</span>       │             └──────────────────────────────┘
+├───────────────────────┤
+│ - id: int             │    uses    ┌──────────────────────────────┐
+│ - nameAr: string      │ ──────────→│  <span class="nd">Database</span>  «Singleton»     │
+│ - nameEn: string      │            ├──────────────────────────────┤
+│ - price: decimal(10,2)│            │ - instance: static PDO       │
+│ - category: <span class="lb">enum</span>      │            ├──────────────────────────────┤
+│ - imageUrl: string    │            │ + getInstance(): Database    │
+│ - isAvailable: boolean│            │ + getConnection(): PDO       │
+├───────────────────────┤            │ + executeQuery()             │
+│ + create()            │            └──────────────────────────────┘
+│ + update()            │
+│ + delete()            │  <span class="lb">Singleton Pattern:</span> ensures ONE DB connection
+│ + toggleAvailability()│  <span class="lb">1..* Relationship:</span> one User → many Reservations
+└───────────────────────┘
+      </div>
+      <div class="box box-gold">
+        <h4>📌 نقاط مهمة في مخطط الفئات</h4>
+        <ul style="padding-right:18px">
+          <li><strong>(-) Private attributes:</strong> لا يمكن الوصول إليها من خارج الكلاس مباشرةً</li>
+          <li><strong>(+) Public methods:</strong> يمكن استدعاؤها من الخارج — تُشكّل الـ API الداخلية للكلاس</li>
+          <li><strong>enum:</strong> قيم محددة مسبقاً — role: user/admin، status: pending/confirmed/cancelled/completed</li>
+          <li><strong>Singleton (Database):</strong> نمط تصميمي يضمن نسخة واحدة فقط من اتصال قاعدة البيانات طوال عمر التطبيق</li>
+          <li><strong>FK (Foreign Key):</strong> userId في Reservation يربطها بـ User — علاقة 1 إلى متعدد</li>
+        </ul>
+      </div>
+
+      <!-- ── SEQUENCE DIAGRAM ── -->
+      <div class="chap-divider">
+        <div class="num">③</div>
+        <div><h3>مخطط التسلسل | Sequence Diagram (§4.5)</h3><p>TIME-ORDERED messages between objects — HOW components communicate</p></div>
+      </div>
+      <div class="bili">
+        <div class="ar"><span class="lang">الهدف</span><p>يُظهر <strong>تسلسل الرسائل زمنياً</strong> بين مكونات النظام. الزمن يتدفق من الأعلى للأسفل. يُبيّن بالضبط كيف تتحدث الكائنات مع بعضها لإنجاز مهمة.</p></div>
+        <div class="en"><span class="lang">Purpose</span><p>Shows the <strong>time-ordered messages</strong> between system components. Time flows top-to-bottom. Shows exactly HOW objects communicate to accomplish a specific task or use case.</p></div>
+      </div>
+
+      <p style="font-weight:800;color:var(--brown-dark);margin-bottom:10px;">📍 تسلسل 1: إنشاء الحجز | Reservation Creation (§4.5.1)</p>
+      <div class="uml-box">
+Customer    Browser       JavaScript    PHP API        MySQL DB      Email Svc
+    │           │              │             │               │             │
+    │─Fill──────→              │             │               │             │
+    │  Form      │             │             │               │             │
+    │            │─Submit──────→             │               │             │
+    │            │         ┌───┴───┐         │               │             │
+    │            │         │Validate│         │               │             │
+    │            │         │Client │         │               │             │
+    │            │         └───┬───┘         │               │             │
+    │            │             │─POST────────→               │             │
+    │            │             │  /api/create_reservation    │             │
+    │            │             │             │─Validate──────→             │
+    │            │             │             │  date/session │             │
+    │            │             │             │←──Result──────│             │
+    │            │             │             │               │             │
+    │            │             │         <span class="lb">[if Bitcoin]</span>                 │
+    │            │             │             │ Generate BTC  │             │
+    │            │             │             │   Address     │             │
+    │            │             │             │               │             │
+    │            │             │             │─INSERT────────→             │
+    │            │             │             │  reservation  │             │
+    │            │             │             │←──new ID──────│             │
+    │            │             │             │               │             │
+    │            │             │             │───────────────────Send──────→
+    │            │             │             │               │   Confirm   │
+    │            │←─JSON Success────────────│               │   Email     │
+    │←─Show──────│             │             │               │             │
+    │  Confirm   │             │             │               │             │
+      </div>
+
+      <p style="font-weight:800;color:var(--brown-dark);margin:20px 0 10px;">📍 تسلسل 2: تسجيل الدخول | User Authentication (§4.5.2)</p>
+      <div class="flow">
+        <div class="fstep"><div class="fnum">1</div><div class="fstep-body"><h4>User enters email + password</h4><p>المستخدم يملأ حقلَي الإيميل وكلمة المرور</p></div></div>
+        <div class="fstep"><div class="fnum">2</div><div class="fstep-body"><h4>POST → /api/login.php</h4><p>JavaScript يرسل JSON payload إلى الخادم</p></div></div>
+        <div class="fstep"><div class="fnum">3</div><div class="fstep-body"><h4>SELECT * WHERE email = ?</h4><p>PHP يستعلم قاعدة البيانات بالإيميل عبر Prepared Statement</p></div></div>
+        <div class="fstep"><div class="fnum">4</div><div class="fstep-body"><h4>password_verify($input, $hash)</h4><p>PHP يقارن كلمة المرور المُدخلة مع الـ bcrypt hash المخزنة</p></div></div>
+        <div class="fstep"><div class="fnum">5</div><div class="fstep-body"><h4>Create Session {user_id, role}</h4><p>PHP يُنشئ session تحفظ هوية المستخدم ودوره</p></div></div>
+        <div class="fstep"><div class="fnum">6</div><div class="fstep-body"><h4>JavaScript stores user data → Role-based Redirect</h4><p>عميل → /dashboard.html | مدير → /admin-dashboard.html</p></div></div>
+      </div>
+
+      <!-- ── STATE DIAGRAM ── -->
+      <div class="chap-divider">
+        <div class="num">④</div>
+        <div><h3>مخطط الحالات | State Diagram (§4.6)</h3><p>LIFECYCLE of a Reservation — all possible states and transitions</p></div>
+      </div>
+      <div class="bili">
+        <div class="ar"><span class="lang">الهدف</span><p>يُظهر <strong>دورة حياة الكائن</strong> — جميع الحالات الممكنة والانتقالات بينها. يُستخدم للكيانات ذات السلوك متعدد الحالات مثل الحجوزات والطلبات.</p></div>
+        <div class="en"><span class="lang">Purpose</span><p>Shows an object's <strong>lifecycle</strong> — all possible states and transitions between them. Used for entities with multi-state behavior like reservations, orders, or workflows.</p></div>
+      </div>
+      <div class="uml-box">
+   ●  ← Initial State (Creation)
+   │
+   ↓
+┌──────────┐  [Admin Confirms]  ┌────────────┐  [Date Passed]  ┌───────────┐
+│ <span class="nd">Pending</span>  │ ─────────────→ │ <span class="nd">Confirmed</span>  │ ──────────────→│ <span class="nd">Completed</span> │
+│ (initial)│                   │            │                 │ (terminal)│
+└──────────┘                   └────────────┘                 └─────┬─────┘
+     │                              │                               │
+     │ [User Cancels]               │ [Admin Cancels]               │
+     │                              │                               │
+     ↓                              ↓                               │
+┌────────────┐                                                      │
+│ <span class="nd">Cancelled</span>  │ ←────────────────────────────────────────────────┘
+│ (terminal) │
+└────────────┘
+     ●◉ End State
+
+<span class="lb">── Parallel Payment State Machine ──</span>
+┌─────────┐  [Payment Received]  ┌──────┐
+│ Pending │ ────────────────────→│ Paid │ ← Cash confirmed / BTC verified
+└─────────┘                      └──────┘
+     │         [No Payment]
+     └─────────────────────────→ Failed
+      </div>
+      <div class="cards">
+        <div class="card" style="border-top-color:#c8943a">
+          <div class="ico">⏳</div>
+          <h3>Pending — معلق <span class="en-sub">Initial State</span></h3>
+          <p>الحالة الابتدائية فور إنشاء الحجز. يظل معلقاً حتى يتخذ المدير قراراً.</p>
+        </div>
+        <div class="card" style="border-top-color:#5caa7a">
+          <div class="ico">✅</div>
+          <h3>Confirmed — مؤكد <span class="en-sub">Admin Approves</span></h3>
+          <p>المدير يوافق على الحجز. يمكن أن يُلغى لاحقاً من قِبل المدير.</p>
+        </div>
+        <div class="card" style="border-top-color:#1a3a5c">
+          <div class="ico">🏁</div>
+          <h3>Completed — مكتمل <span class="en-sub">Terminal State</span></h3>
+          <p>مرّ تاريخ الحجز بنجاح. حالة نهائية — لا مزيد من التغييرات.</p>
+        </div>
+        <div class="card" style="border-top-color:#d47a7a">
+          <div class="ico">❌</div>
+          <h3>Cancelled — ملغي <span class="en-sub">Terminal State</span></h3>
+          <p>إلغاء من المستخدم (Pending→Cancelled) أو من المدير (Confirmed→Cancelled). حالة نهائية.</p>
+        </div>
+      </div>
+
+      <!-- ── ACTIVITY DIAGRAM ── -->
+      <div class="chap-divider">
+        <div class="num">⑤</div>
+        <div><h3>مخطط النشاط | Activity Diagram (§4.7)</h3><p>PROCESS FLOW — business workflows with decision points and swimlanes</p></div>
+      </div>
+      <div class="bili">
+        <div class="ar"><span class="lang">الهدف</span><p>يُظهر <strong>تدفق العمليات</strong> التجارية — التسلسل ونقاط القرار والأنشطة المتوازية. يُقسَّم إلى Swimlanes لتوضيح مسؤولية كل طرف.</p></div>
+        <div class="en"><span class="lang">Purpose</span><p>Shows <strong>business process flow</strong> — sequential steps, decision points, and parallel activities. Divided into Swimlanes to clarify responsibility for each actor.</p></div>
+      </div>
+      <div class="uml-box">
+<span class="cm">── تسجيل المستخدم | User Registration Activity ──</span>
+
+  User Swimlane      System Swimlane       Email Swimlane
+  ───────────────    ──────────────────    ──────────────
+       ●
+       │
+  [Open Registration Page]
+       │
+  [Fill Form: name, email, phone, password]
+       │
+  [Submit Form] ──────────────→ [Validate Input]
+                                      │
+                                  ┌───┴────┐
+                                  │ Valid? │
+                                  └───┬────┘
+                                  No  │  Yes
+                             ←────────┘   │
+                     [Show Error]         │
+                             ──────────→  │ (loop back)
+                                     [Hash Password bcrypt]
+                                          │
+                                     [Save to Database]
+                                          │
+                                                          [Send Confirm Email]
+                                          │                      │
+                                     [Show Success Message] ←────┘
+                                          │
+                                         ●◉
+
+<span class="lb">Swimlane elements:</span>
+  ●     = Initial Node (بداية)       ●◉ = Final Node (نهاية)
+  ◇     = Decision point (قرار)      → = Control flow (تدفق)
+  [  ]  = Activity (نشاط)
+      </div>
+      <table class="tbl">
+        <thead><tr><th>العنصر</th><th>Element</th><th>الرمز</th><th>المعنى</th></tr></thead>
+        <tbody>
+          <tr><td>نقطة البداية</td><td>Initial Node</td><td>●</td><td>بداية تدفق العمل</td></tr>
+          <tr><td>نقطة النهاية</td><td>Final Node</td><td>●◉</td><td>نهاية تدفق العمل</td></tr>
+          <tr><td>نقطة القرار</td><td>Decision</td><td>◇</td><td>تفرع بناءً على شرط (Yes/No)</td></tr>
+          <tr><td>النشاط</td><td>Activity</td><td>[ ]</td><td>عمل محدد يتم تنفيذه</td></tr>
+          <tr><td>حارة السباحة</td><td>Swimlane</td><td>─────</td><td>يُحدد مَن المسؤول عن كل نشاط</td></tr>
+          <tr><td>التدفق</td><td>Control Flow</td><td>→</td><td>الانتقال من نشاط لآخر</td></tr>
+        </tbody>
+      </table>
+
+      <!-- UML COMPARISON -->
+      <div class="box box-gold" style="margin-top:24px">
+        <h4>📊 مقارنة المخططات الخمسة — جدول مرجعي سريع</h4>
+      </div>
+      <table class="tbl">
+        <thead><tr><th>#</th><th>المخطط</th><th>Diagram</th><th>يجيب على</th><th>Keyword</th><th>نوعه</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>حالات الاستخدام</td><td>Use Case</td><td>مَن يفعل ماذا؟</td><td>Who & What</td><td><span class="bdg bdg-blue">Behavioral</span></td></tr>
+          <tr><td>2</td><td>الفئات</td><td>Class</td><td>كيف بنية النظام؟</td><td>Structure</td><td><span class="bdg bdg-gold">Structural</span></td></tr>
+          <tr><td>3</td><td>التسلسل</td><td>Sequence</td><td>كيف تتواصل؟</td><td>Interaction</td><td><span class="bdg bdg-blue">Behavioral</span></td></tr>
+          <tr><td>4</td><td>الحالات</td><td>State</td><td>ما حالات الكائن؟</td><td>Lifecycle</td><td><span class="bdg bdg-blue">Behavioral</span></td></tr>
+          <tr><td>5</td><td>النشاط</td><td>Activity</td><td>كيف تسير العملية؟</td><td>Process Flow</td><td><span class="bdg bdg-blue">Behavioral</span></td></tr>
+        </tbody>
+      </table>
+
+      <!-- API ENDPOINTS -->
+      <div class="chap-divider">
+        <div class="num">4.8</div>
+        <div><h3>تطبيق الـ API | API Implementation</h3><p>13 RESTful endpoints — complete backend</p></div>
+      </div>
+      <table class="tbl">
+        <thead><tr><th>Endpoint</th><th>Method</th><th>الوظيفة</th><th>الصلاحية</th></tr></thead>
+        <tbody>
+          <tr><td>/api/register.php</td><td><span class="bdg bdg-green">POST</span></td><td>تسجيل حساب جديد</td><td>عام</td></tr>
+          <tr><td>/api/login.php</td><td><span class="bdg bdg-green">POST</span></td><td>دخول العميل</td><td>عام</td></tr>
+          <tr><td>/api/admin-login.php</td><td><span class="bdg bdg-green">POST</span></td><td>دخول المدير</td><td>عام</td></tr>
+          <tr><td>/api/get_menu.php</td><td><span class="bdg bdg-blue">GET</span></td><td>استرجاع القائمة</td><td>عام</td></tr>
+          <tr><td>/api/add_menu_item.php</td><td><span class="bdg bdg-green">POST</span></td><td>إضافة صنف</td><td>Admin فقط</td></tr>
+          <tr><td>/api/update_menu_item.php</td><td><span class="bdg bdg-gold">PUT</span></td><td>تحديث صنف</td><td>Admin فقط</td></tr>
+          <tr><td>/api/delete_menu_item.php</td><td><span class="bdg bdg-red">DELETE</span></td><td>حذف صنف</td><td>Admin فقط</td></tr>
+          <tr><td>/api/create_reservation.php</td><td><span class="bdg bdg-green">POST</span></td><td>إنشاء حجز</td><td>مستخدم مسجل</td></tr>
+          <tr><td>/api/get_reservations.php</td><td><span class="bdg bdg-blue">GET</span></td><td>حجوزات المستخدم</td><td>مستخدم مسجل</td></tr>
+          <tr><td>/api/update_reservation.php</td><td><span class="bdg bdg-gold">PUT</span></td><td>تحديث حالة الحجز</td><td>Admin فقط</td></tr>
+          <tr><td>/api/admin-reservations.php</td><td><span class="bdg bdg-blue">GET</span></td><td>جميع الحجوزات</td><td>Admin فقط</td></tr>
+          <tr><td>/api/get_users.php</td><td><span class="bdg bdg-blue">GET</span></td><td>قائمة المستخدمين</td><td>Admin فقط</td></tr>
+          <tr><td>/api/admin-stats.php</td><td><span class="bdg bdg-blue">GET</span></td><td>إحصائيات الداشبورد</td><td>Admin فقط</td></tr>
+        </tbody>
+      </table>
+
+      <!-- DATABASE DESIGN -->
+      <div class="chap-divider">
+        <div class="num">4.9</div>
+        <div><h3>تصميم قاعدة البيانات | Database Design</h3><p>3 tables — MySQL schema with design decisions</p></div>
+      </div>
+      <div class="uml-box">
+<span class="cm">── restaurant_db — MySQL 8.0 · InnoDB · UTF8MB4 ──</span>
+
+┌──────────────────────────────────┐
+│             <span class="nd">users</span>                │
+├──────────────────────────────────┤
+│ id          INT PK AUTO_INC      │──────────────────────────────────┐
+│ full_name   VARCHAR(100) NOT NULL│                                  │
+│ email       VARCHAR(100) UNIQUE  │                                  │
+│ phone       VARCHAR(20)          │                                  │
+│ password    VARCHAR(255) bcrypt  │                                  │ 1
+│ role        <span class="lb">ENUM('user','admin')</span>│                                  │
+│ created_at  TIMESTAMP            │                                  │
+└──────────────────────────────────┘                                  │
+                                                                      │ *
+┌──────────────────────────────────┐    ┌──────────────────────────── │ ─┐
+│           <span class="nd">menu_items</span>            │    │           <span class="nd">reservations</span>       │
+├──────────────────────────────────┤    ├──────────────────────────────┤
+│ id          INT PK AUTO_INC      │    │ id           INT PK          │
+│ name_ar     VARCHAR(100)         │    │ user_id      INT FK ─────────┘
+│ name_en     VARCHAR(100)         │    │ reservation_date DATE        │
+│ desc_ar     TEXT                 │    │ reservation_time TIME        │
+│ price       DECIMAL(10,2)        │    │ guests_count INT(1-20)       │
+│ category    <span class="lb">ENUM(palestinian,    </span>│    │ table_number INT auto-assign │
+│             <span class="lb">main,grill,sweet,</span>   │    │ payment_method <span class="lb">ENUM(cash,btc)</span>│
+│             <span class="lb">beverage)</span>          │    │ bitcoin_address VARCHAR(100) │
+│ image_url   VARCHAR(255)         │    │ status  <span class="lb">ENUM(pending,confirmed</span>│
+│ is_available BOOLEAN DEFAULT TRUE│    │         <span class="lb">completed,cancelled)</span> │
+│ created_at  TIMESTAMP            │    │ special_requests TEXT        │
+└──────────────────────────────────┘    │ created_at TIMESTAMP         │
+                                        └──────────────────────────────┘
+
+<span class="lb">Design Decisions:</span>
+  InnoDB engine  → ACID compliance + Foreign Key constraints
+  UTF8MB4        → Full Arabic + emoji support in all text fields
+  DECIMAL(10,2)  → Precise currency storage (no floating point errors)
+  ENUM fields    → Data integrity — only predefined values allowed
+  BOOLEAN        → Menu item availability toggle without deleting
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════
+         CHAPTER 5 — CONCLUSION
+    ════════════════════════════════════════════════════════════ -->
+    <section id="ch5">
+      <div class="sec-head">
+        <div class="sec-icon">✅</div>
+        <div class="sec-title">
+          <h2>الفصل الخامس — الخاتمة</h2>
+          <p>Chapter 5: Conclusion — من ملف التقرير Word/PDF</p>
+        </div>
+      </div>
+      <span class="from-badge from-word">📄 Word/PDF Report — Chapter 5</span>
+
+      <div class="chap-divider">
+        <div class="num">5.1</div>
+        <div><h3>ملخص الإنجازات | Summary of Achievements</h3></div>
+      </div>
+      <div class="box box-green">
+        <h4>✅ جميع الأهداف الخمسة تحققت بنجاح | All 5 Objectives Achieved</h4>
+      </div>
+      <div class="cards">
+        <div class="card"><div class="ico">📅</div><h3>نظام الحجز ✅</h3><p>اختيار تاريخ/وقت، عدد ضيوف (1-20)، تعيين طاولة تلقائي، منع الحجز المزدوج</p></div>
+        <div class="card"><div class="ico">🍽️</div><h3>إدارة القائمة ✅</h3><p>24 صنف فلسطيني/عربي في 5 تصنيفات، CRUD كامل للمدير، دعم ثنائي اللغة</p></div>
+        <div class="card"><div class="ico">🔒</div><h3>المصادقة الآمنة ✅</h3><p>bcrypt لكلمات المرور، RBAC للأدوار، Session آمنة، حماية API endpoints</p></div>
+        <div class="card"><div class="ico">💰</div><h3>تكامل الدفع ✅</h3><p>نقدي عند الوصول + Bitcoin مع توليد عنوان تلقائي لكل حجز</p></div>
+        <div class="card"><div class="ico">📊</div><h3>لوحة الإدارة ✅</h3><p>إحصائيات فورية عبر 13 API، إدارة كاملة للقائمة والحجوزات والمستخدمين</p></div>
+      </div>
+
+      <div class="chap-divider">
+        <div class="num">5.2</div>
+        <div><h3>نتائج الاختبار | Testing Results</h3></div>
+      </div>
+      <table class="tbl">
+        <thead><tr><th>الوحدة</th><th>حالة الاختبار</th><th>Test Case</th><th>النتيجة</th></tr></thead>
+        <tbody>
+          <tr><td>المصادقة</td><td>تسجيل ببيانات صحيحة</td><td>Valid Registration</td><td><span class="bdg bdg-green">✓ PASS</span></td></tr>
+          <tr><td>المصادقة</td><td>دخول بكلمة مرور خاطئة</td><td>Wrong Password</td><td><span class="bdg bdg-green">✓ PASS</span></td></tr>
+          <tr><td>القائمة</td><td>تحميل جميع الأصناف</td><td>Load All 24 Items</td><td><span class="bdg bdg-green">✓ PASS</span></td></tr>
+          <tr><td>الحجز</td><td>حجز بدفع نقدي</td><td>Cash Reservation</td><td><span class="bdg bdg-green">✓ PASS</span></td></tr>
+          <tr><td>الحجز</td><td>حجز ببيتكوين</td><td>Bitcoin Reservation</td><td><span class="bdg bdg-green">✓ PASS</span></td></tr>
+          <tr><td>الحجز</td><td>تاريخ في الماضي</td><td>Past Date Validation</td><td><span class="bdg bdg-green">✓ PASS</span></td></tr>
+          <tr><td>الإدارة</td><td>إضافة صنف للقائمة</td><td>Add Menu Item</td><td><span class="bdg bdg-green">✓ PASS</span></td></tr>
+          <tr><td>الإدارة</td><td>تحديث حالة الحجز</td><td>Update Reservation Status</td><td><span class="bdg bdg-green">✓ PASS</span></td></tr>
+          <tr><td>الإدارة</td><td>عرض إحصائيات لوحة التحكم</td><td>View Dashboard Stats</td><td><span class="bdg bdg-green">✓ PASS</span></td></tr>
+        </tbody>
+      </table>
+
+      <div class="chap-divider">
+        <div class="num">5.3</div>
+        <div><h3>التوصيات والعمل المستقبلي | Recommendations & Future Work</h3></div>
+      </div>
+      <div class="cards">
+        <div class="card"><div class="ico">💳</div><h3>بوابة دفع حقيقية <span class="en-sub">Real Payment Gateway</span></h3><p>BTCPay Server أو Coinbase Commerce لمعالجة Bitcoin الحقيقية</p></div>
+        <div class="card"><div class="ico">📧</div><h3>نظام الإشعارات <span class="en-sub">Email Notifications</span></h3><p>PHP Mailer لإشعارات تأكيد الحجز والتغييرات تلقائياً</p></div>
+        <div class="card"><div class="ico">🪑</div><h3>إدارة الطاولات <span class="en-sub">Table Management</span></h3><p>نظام حقيقي لتتبع الطاولات وسعتها ومنع الحجز الزائد</p></div>
+        <div class="card"><div class="ico">📱</div><h3>تطبيق موبايل <span class="en-sub">Mobile App</span></h3><p>React Native أو Flutter لتطبيق iOS/Android متكامل</p></div>
+        <div class="card"><div class="ico">🤖</div><h3>ذكاء اصطناعي <span class="en-sub">AI Features</span></h3><p>محرك توصيات يحلل تاريخ الطلبات لاقتراح أصناف شخصية</p></div>
+        <div class="card"><div class="ico">🏪</div><h3>دعم متعدد الفروع <span class="en-sub">Multi-Branch</span></h3><p>معمارية موسعة لإدارة فروع متعددة تحت إدارة مركزية</p></div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════
+         POWERPOINT — PPTX SPECIFIC CONTENT
+    ════════════════════════════════════════════════════════════ -->
+    <section id="pptx-overview">
+      <div class="sec-head">
+        <div class="sec-icon">📊</div>
+        <div class="sec-title">
+          <h2>ملف العرض التقديمي — محتوى خاص</h2>
+          <p>PowerPoint — Content beyond the Report (48 slides)</p>
+        </div>
+      </div>
+      <span class="from-badge from-pptx">📊 PowerPoint Presentation — Exclusive Content</span>
+
+      <div class="box box-gold">
+        <h4>📋 هيكل العرض التقديمي (48 شريحة)</h4>
+        <p>1. الشريحة الأولى (العنوان) · 2. مخطط العرض (12 محور) · 3. خلفية المشروع · 4. الأطباق الفلسطينية · 5. المشكلة · 6. الأهداف · 7. التقنيات · 8. المعمارية · 9. مخططات UML (شرائح متعددة) · 10. قاعدة البيانات · 11. المميزات الرئيسية · 12. الأمان · 13. الواجهة · 14. نظام الحجز · 15. لوحة الإدارة · 16. الاختبار · 17. الإحصائيات · 18. الخاتمة · 19. التوصيات · 20. العمل المستقبلي · 21. التحديات والحلول · 22. الأثر والفوائد · 23. الدروس المستفادة · 24. المراجع · 25. الشكر · 26. Q&A</p>
+      </div>
+    </section>
+
+    <section id="pptx-tech">
+      <div class="sec-head">
+        <div class="sec-icon">⚙️</div>
+        <div class="sec-title">
+          <h2>التقنيات والمعمارية — تفاصيل الـ PPTX</h2>
+          <p>Tech Stack & Architecture — From Presentation Slides 7-8</p>
+        </div>
+      </div>
+      <span class="from-badge from-pptx">📊 Slides 7-8</span>
+
+      <div class="bili">
+        <div class="ar">
+          <span class="lang">المعمارية ثلاثية الطبقات</span>
+          <p><strong>طبقة العرض (Presentation):</strong> 6 صفحات HTML — index, menu, dashboard, admin-dashboard, login, register<br>
+          <strong>طبقة التطبيق (Application):</strong> PHP API — 13 endpoint + 8 ملفات PHP إضافية<br>
+          <strong>طبقة البيانات (Data):</strong> MySQL — 3 جداول مترابطة</p>
+        </div>
+        <div class="en">
+          <span class="lang">Three-Tier Architecture</span>
+          <p><strong>Presentation:</strong> 6 HTML pages — index, menu, dashboard, admin-dashboard, login, register<br>
+          <strong>Application:</strong> PHP RESTful API — 13 endpoints + 8 additional PHP files<br>
+          <strong>Data:</strong> MySQL — 3 related tables with foreign key constraints</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pptx-impl">
+      <div class="sec-head">
+        <div class="sec-icon">🔧</div>
+        <div class="sec-title">
+          <h2>مميزات التطبيق — تفاصيل الـ PPTX</h2>
+          <p>Key Implementation Features — Slides 14-15, 17-18, 20-24</p>
+        </div>
+      </div>
+      <span class="from-badge from-pptx">📊 Slides 14-24</span>
+
+      <div class="cards">
+        <div class="card">
+          <div class="ico">🌍</div>
+          <h3>دعم العربية RTL <span class="en-sub">Arabic RTL Support</span></h3>
+          <p>خط Cairo مع CSS <code>direction: rtl</code>. أسماء ثنائية اللغة مُخزَّنة في قاعدة البيانات. UTF8MB4 لكل حقول النص.</p>
+        </div>
+        <div class="card">
+          <div class="ico">📅</div>
+          <h3>نظام الحجز الفوري <span class="en-sub">Real-Time Reservation</span></h3>
+          <p>Date picker مع تعطيل التواريخ الماضية. تحقق مزدوج Client+Server. تعيين رقم الطاولة تلقائياً. Conflict detection.</p>
+        </div>
+        <div class="card">
+          <div class="ico">🍽️</div>
+          <h3>إدارة القائمة الديناميكية <span class="en-sub">Dynamic Menu</span></h3>
+          <p>5 تصنيفات. فلترة فورية. CRUD كامل بحوارات Modal. تبديل التوافر. إدارة الصور والأسعار.</p>
+        </div>
+        <div class="card">
+          <div class="ico">👮</div>
+          <h3>RBAC <span class="en-sub">Role-Based Access</span></h3>
+          <p>لوحة العميل: عرض + إنشاء حجوزات. لوحة المدير: إدارة كاملة. Session-based auth. API endpoints محمية.</p>
+        </div>
+      </div>
+
+      <div class="chap-divider">
+        <div class="num">💡</div>
+        <div><h3>نظام الحجز بالتفصيل | Reservation System (Slide 20)</h3></div>
+      </div>
+      <table class="tbl">
+        <thead><tr><th>حقل النموذج</th><th>Form Field</th><th>التحقق</th><th>Validation</th></tr></thead>
+        <tbody>
+          <tr><td>تاريخ الحجز</td><td>Reservation Date</td><td>لا تواريخ ماضية، الحد الأدنى اليوم</td><td>Past dates disabled, min = today</td></tr>
+          <tr><td>وقت الحجز</td><td>Reservation Time</td><td>متوافق مع ساعات عمل المطعم</td><td>Aligned with restaurant hours</td></tr>
+          <tr><td>عدد الضيوف</td><td>Number of Guests</td><td>نطاق 1-20، رسالة خطأ إذا خارجه</td><td>Range 1-20, error for out-of-range</td></tr>
+          <tr><td>طلبات خاصة</td><td>Special Requests</td><td>اختياري، 500 حرف كحد أقصى</td><td>Optional, max 500 characters</td></tr>
+          <tr><td>طريقة الدفع</td><td>Payment Method</td><td>نقدي أو Bitcoin — إلزامي</td><td>Cash or Bitcoin — required</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="pptx-security">
+      <div class="sec-head">
+        <div class="sec-icon">🔒</div>
+        <div class="sec-title">
+          <h2>تطبيق الأمان — شرائح الـ PPTX</h2>
+          <p>Security Implementation — Slide 16</p>
+        </div>
+      </div>
+      <span class="from-badge from-pptx">📊 Slide 16</span>
+
+      <div class="cards">
+        <div class="card" style="border-top-color:#1a3a5c">
+          <div class="ico">🔑</div>
+          <h3>1. bcrypt Password Hashing</h3>
+          <div class="code"><span class="cm">// Hashing:</span>
+<span class="fn">$hash</span> = <span class="fn">password_hash</span>(<span class="str">$password</span>, PASSWORD_BCRYPT);
+<span class="cm">// Cost factor: 10 (balanced security/performance)</span>
+
+<span class="cm">// Verification:</span>
+<span class="fn">password_verify</span>(<span class="str">$input</span>, <span class="str">$storedHash</span>); <span class="cm">// returns bool</span>
+
+<span class="cm">// Raw passwords NEVER stored in database</span>
+<span class="cm">// Auto-generates unique salt per password</span></div>
+        </div>
+        <div class="card" style="border-top-color:#2d6a4f">
+          <div class="ico">🛡️</div>
+          <h3>2. SQL Injection Prevention — PDO</h3>
+          <div class="code"><span class="cm">// WRONG (vulnerable):</span>
+<span class="str">"SELECT * FROM users WHERE email = '$email'"</span>
+
+<span class="cm">// CORRECT (PDO Prepared Statement):</span>
+<span class="fn">$stmt</span> = <span class="fn">$pdo</span>-><span class="fn">prepare</span>(<span class="str">'SELECT * FROM users WHERE email = ?'</span>);
+<span class="fn">$stmt</span>-><span class="fn">execute</span>([<span class="str">$email</span>]);
+<span class="cm">// Input treated as DATA not SQL code</span></div>
+        </div>
+        <div class="card" style="border-top-color:#c8943a">
+          <div class="ico">✅</div>
+          <h3>3. Input Validation — Server-side</h3>
+          <div class="code"><span class="cm">// Date: no past reservations</span>
+<span class="kw">if</span>(<span class="str">$date</span> < <span class="fn">date</span>(<span class="str">'Y-m-d'</span>)) return error();
+
+<span class="cm">// Guests: enforce range</span>
+<span class="kw">if</span>(<span class="str">$guests</span> < 1 || <span class="str">$guests</span> > 20) return error();
+
+<span class="cm">// Email: format validation</span>
+<span class="fn">filter_var</span>(<span class="str">$email</span>, FILTER_VALIDATE_EMAIL);</div>
+        </div>
+        <div class="card" style="border-top-color:#7a1a1a">
+          <div class="ico">🌐</div>
+          <h3>4. CORS + Session Security</h3>
+          <div class="code"><span class="cm">// CORS headers on all API endpoints:</span>
+<span class="fn">header</span>(<span class="str">"Access-Control-Allow-Origin: *"</span>);
+<span class="fn">header</span>(<span class="str">"Access-Control-Allow-Methods: GET,POST,PUT,DELETE"</span>);
+
+<span class="cm">// Role check on protected endpoints:</span>
+<span class="kw">if</span>(<span class="str">$_SESSION['role']</span> !== <span class="str">'admin'</span>) {
+  http_response_code(403); exit;
+}</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pptx-testing">
+      <div class="sec-head">
+        <div class="sec-icon">✅</div>
+        <div class="sec-title">
+          <h2>الاختبار والإحصائيات — شرائح الـ PPTX</h2>
+          <p>Testing & System Statistics — Slides 26-29</p>
+        </div>
+      </div>
+      <span class="from-badge from-pptx">📊 Slides 26-29</span>
+
+      <div class="stats">
+        <div class="stat"><div class="stat-n">13</div><div class="stat-l">RESTful API Endpoints</div><div class="stat-s">نقطة API خلفية</div></div>
+        <div class="stat"><div class="stat-n">6</div><div class="stat-l">HTML Pages</div><div class="stat-s">صفحة ويب</div></div>
+        <div class="stat"><div class="stat-n">1500+</div><div class="stat-l">Lines of CSS</div><div class="stat-s">سطر CSS</div></div>
+        <div class="stat"><div class="stat-n">2000+</div><div class="stat-l">Lines of JS</div><div class="stat-s">سطر JavaScript</div></div>
+        <div class="stat"><div class="stat-n">80+</div><div class="stat-l">Registered Users</div><div class="stat-s">مستخدم مسجل</div></div>
+        <div class="stat"><div class="stat-n">150+</div><div class="stat-l">Reservations</div><div class="stat-s">حجز مُعالج</div></div>
+      </div>
+    </section>
+
+    <section id="pptx-future">
+      <div class="sec-head">
+        <div class="sec-icon">🚀</div>
+        <div class="sec-title">
+          <h2>التحديات والعمل المستقبلي — شرائح الـ PPTX</h2>
+          <p>Challenges, Future Work & Impact — Slides 36-43</p>
+        </div>
+      </div>
+      <span class="from-badge from-pptx">📊 Slides 36-43</span>
+
+      <table class="tbl">
+        <thead><tr><th>التحدي | Challenge</th><th>الحل | Solution</th><th>النتيجة | Result</th></tr></thead>
+        <tbody>
+          <tr><td>دعم العربية RTL</td><td>Cairo Font + CSS RTL + UTF8MB4</td><td>واجهة ثنائية اللغة سلسة</td></tr>
+          <tr><td>تكامل Bitcoin</td><td>توليد عنوان BTC تلقائي فريد لكل حجز</td><td>عناوين دفع آمنة وفريدة</td></tr>
+          <tr><td>التحقق من التاريخ</td><td>تحقق مزدوج: JavaScript + PHP</td><td>منع 100% من التواريخ غير الصالحة</td></tr>
+          <tr><td>تعيين الطاولة</td><td>خوارزمية تفحص التوافر وتعيين الأمثل</td><td>صفر حجوزات مزدوجة</td></tr>
+          <tr><td>أمان البيانات</td><td>bcrypt + PDO Prepared Statements</td><td>حماية بمعايير صناعية</td></tr>
+          <tr><td>التحكم بالوصول</td><td>Session-based middleware على كل مسار</td><td>RBAC دقيق وشامل</td></tr>
+        </tbody>
+      </table>
+
+      <div class="box box-gold" style="margin-top:20px">
+        <h4>🌍 الأثر الثقافي والإقليمي | Cultural & Regional Impact (Slide 38-39)</h4>
+        <p>يُعزز التراث الطهوي الفلسطيني رقمياً · يجعل المطبخ التقليدي متاحاً لجمهور أوسع · يدعم التحول الرقمي للمطاعم الفلسطينية · Bitcoin يعالج قيوداً مصرفية حقيقية · النظام نموذج قابل للتطبيق على أعمال فلسطينية أخرى</p>
+      </div>
+
+      <div class="box box-blue" style="margin-top:12px">
+        <h4>📚 Key Lessons Learned (Slide 40)</h4>
+        <ul>
+          <li>Multi-layer input validation (client + server) is essential</li>
+          <li>Prepared statements are non-negotiable for database security</li>
+          <li>RESTful API architecture provides excellent scalability</li>
+          <li>Bilingual web apps require careful encoding planning from day one</li>
+          <li>Clear requirements documentation prevents scope creep</li>
+          <li>Iterative development yields better final results than waterfall</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+</div><!-- end sidenav-wrap -->
+
+<!-- ═══════════════════════════ Q&A ═══════════════════════════ -->
+<div class="qa-wrap" id="qa">
+<div class="qa-inner">
+  <div style="text-align:center;margin-bottom:32px">
+    <div style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--brown-dark);padding:8px 24px;border-radius:30px;font-weight:900;font-size:.9rem;">❓ أسئلة المناقشة الشاملة</div>
+    <p style="color:rgba(255,255,255,.5);margin-top:10px;font-size:.85rem">اضغط على أي سؤال لتظهر الإجابة الكاملة بالعربية والإنجليزية</p>
+  </div>
+
+  <!-- GROUP 1: UML -->
+  <div class="qa-section-title">📐 أسئلة مخططات UML</div>
+
+  <div class="qa-card">
+    <div class="qa-q" onclick="tog(this)">
+      <div class="qa-qtxt">
+        <div class="qa-cat-tag">Use Case Diagram</div>
+        <h4>ما الفرق بين «include» و«extend» في مخطط حالات الاستخدام؟</h4>
+        <p>What is the difference between «include» and «extend»?</p>
+      </div><span class="qa-arrow">▾</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ar"><strong>«include»</strong> علاقة إلزامية — حالة الاستخدام الأساسية تستلزم دائماً تنفيذ الحالة المُضمَّنة بدون استثناء. مثال في مشروعنا: "تسجيل الدخول" يتضمن دائماً "التحقق من بيانات الاعتماد". <strong>«extend»</strong> علاقة اختيارية — تُضاف فقط في ظروف أو شروط محددة. مثال: "إنشاء حجز" قد يمتد ليشمل "توليد عنوان Bitcoin" — فقط إذا اختار المستخدم Bitcoin كطريقة دفع، وإلا فلا.</div>
+      <div class="qa-en"><strong>«include»</strong>: Mandatory relationship — the base use case ALWAYS triggers the included one without exception. Example: "Login" always includes "Validate Credentials". <strong>«extend»</strong>: Optional relationship — only triggered under specific conditions. Example: "Create Reservation" may extend "Generate Bitcoin Address" — ONLY if the user selected Bitcoin payment, otherwise this path is skipped entirely.</div>
+    </div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q" onclick="tog(this)">
+      <div class="qa-qtxt">
+        <div class="qa-cat-tag">Class Diagram</div>
+        <h4>ما هو نمط Singleton وكيف استخدمتموه في مخطط الفئات؟</h4>
+        <p>What is the Singleton Design Pattern and how is it used?</p>
+      </div><span class="qa-arrow">▾</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ar">Singleton هو نمط تصميمي (Design Pattern) يضمن إنشاء <strong>نسخة واحدة فقط</strong> من كلاس معين طوال عمر التطبيق. استخدمناه في كلاس <strong>Database</strong> لضمان وجود اتصال واحد فقط بقاعدة البيانات MySQL في أي وقت. الكلاس يحفظ الاتصال في خاصية <code>static $instance</code>، وعند أي طلب جديد يُعيد نفس الاتصال المخزن بدلاً من إنشاء اتصال جديد. هذا يوفر الذاكرة، يتجنب تعارض الاتصالات، ويحسن أداء التطبيق بشكل ملحوظ.</div>
+      <div class="qa-en">Singleton is a Design Pattern that ensures only ONE instance of a class exists throughout the application lifecycle. We used it in the <strong>Database</strong> class to maintain a single MySQL PDO connection at any time. The class stores the connection in a <code>static $instance</code> property — on subsequent calls it returns the stored connection instead of creating a new one. This saves memory, avoids connection conflicts, and significantly improves application performance.</div>
+    </div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q" onclick="tog(this)">
+      <div class="qa-qtxt">
+        <div class="qa-cat-tag">State Diagram</div>
+        <h4>اشرح الحالات الأربع لدورة حياة الحجز وانتقالاتها</h4>
+        <p>Explain the 4 states of the Reservation lifecycle and transitions</p>
+      </div><span class="qa-arrow">▾</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ar">دورة حياة الحجز لها أربع حالات: (1) <strong>Pending (معلق)</strong>: الحالة الابتدائية — تُضبط تلقائياً عند إنشاء أي حجز. (2) <strong>Confirmed (مؤكد)</strong>: المدير يوافق على الحجز — ينتقل من Pending. (3) <strong>Completed (مكتمل)</strong>: بعد مرور تاريخ وقت الحجز بنجاح — ينتقل من Confirmed. (4) <strong>Cancelled (ملغي)</strong>: الإلغاء من المستخدم (Pending→Cancelled) أو من المدير (Confirmed→Cancelled). Cancelled و Completed هما حالتان نهائيتان (Terminal) — لا مزيد من الانتقالات. يوجد أيضاً آلة حالات موازية لحالة الدفع: Pending → Paid أو Failed.</div>
+      <div class="qa-en">Reservation lifecycle has 4 states: (1) <strong>Pending</strong>: Initial state — automatically set when any reservation is created. (2) <strong>Confirmed</strong>: Admin approves the booking — transitions from Pending. (3) <strong>Completed</strong>: Reservation date/time has passed successfully — transitions from Confirmed. (4) <strong>Cancelled</strong>: Cancelled by user (Pending→Cancelled) or admin (Confirmed→Cancelled). Cancelled and Completed are both Terminal States — no further transitions possible. There's also a parallel payment state machine: Pending → Paid or Failed.</div>
+    </div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q" onclick="tog(this)">
+      <div class="qa-qtxt">
+        <div class="qa-cat-tag">Sequence Diagram</div>
+        <h4>ما الفرق بين مخطط التسلسل ومخطط النشاط؟</h4>
+        <p>What is the difference between Sequence and Activity diagrams?</p>
+      </div><span class="qa-arrow">▾</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ar"><strong>مخطط التسلسل (Sequence)</strong> يُركز على <strong>الرسائل والتواصل بين الكائنات</strong> عبر الزمن — يُظهر مَن يرسل رسالة لمَن وبأي ترتيب زمني. الزمن يتدفق من الأعلى للأسفل. استخدمناه لتوثيق كيف يتواصل العميل مع JavaScript ثم PHP API ثم MySQL. <strong>مخطط النشاط (Activity)</strong> يُركز على <strong>تدفق العمليات التجارية</strong> ونقاط القرار والأنشطة المتوازية — أشبه بمخطط الانسياب (Flowchart) لكن أكثر قوة. استخدمناه لتوثيق خطوات تسجيل المستخدم من بداية فتح الصفحة حتى نجاح التسجيل.</div>
+      <div class="qa-en"><strong>Sequence Diagram</strong> focuses on <strong>messages and interactions between objects</strong> over time — shows who sends what message to whom in what order. Time flows top-to-bottom. We used it to document how the Customer interacts with JavaScript → PHP API → MySQL. <strong>Activity Diagram</strong> focuses on <strong>business process flow</strong>, decision points, and parallel activities — similar to a Flowchart but more expressive. We used it to document the step-by-step user registration workflow from opening the page to successful registration.</div>
+    </div>
+  </div>
+
+  <!-- GROUP 2: TECHNICAL -->
+  <div class="qa-section-title">⚙️ أسئلة تقنية</div>
+
+  <div class="qa-card">
+    <div class="qa-q" onclick="tog(this)">
+      <div class="qa-qtxt">
+        <div class="qa-cat-tag">Security</div>
+        <h4>ما هو bcrypt ولماذا هو أفضل من MD5 وSHA؟</h4>
+        <p>What is bcrypt and why is it better than MD5 or SHA for passwords?</p>
+      </div><span class="qa-arrow">▾</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ar">bcrypt هو خوارزمية تشفير مُصمَّمة خصيصاً لكلمات المرور. تفوقها على MD5/SHA: (1) <strong>Salting تلقائي</strong>: تُضيف بيانات عشوائية لكل كلمة مرور قبل التشفير — حتى لو مستخدمان لديهما نفس كلمة المرور، الـ hash يختلف تماماً. (2) <strong>Cost Factor قابل للتعديل</strong>: يمكن زيادة صعوبة الاختراق مع تطور قوة الحواسيب. (3) <strong>بطيئة بتصميم</strong>: تستغرق وقتاً أطول — هذا يجعل هجمات Brute Force وRainbow Tables غير عملية. MD5 وSHA سريعتان جداً ولا تدعمان Salting التلقائي — لا تُستخدمان أبداً لكلمات المرور في التطبيقات الحديثة.</div>
+      <div class="qa-en">bcrypt is a hashing algorithm specifically designed for passwords. Advantages over MD5/SHA: (1) <strong>Automatic Salting</strong>: adds random data before hashing — even if two users have the same password, their hashes are completely different. (2) <strong>Adjustable Cost Factor</strong>: difficulty can be increased as hardware improves. (3) <strong>Intentionally slow</strong>: takes longer to compute — making Brute Force and Rainbow Table attacks impractical. MD5 and SHA are too fast and lack automatic salting — NEVER use them for passwords in modern applications.</div>
+    </div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q" onclick="tog(this)">
+      <div class="qa-qtxt">
+        <div class="qa-cat-tag">Database</div>
+        <h4>ما هي SQL Injection وكيف منعتموها في مشروعكم؟</h4>
+        <p>What is SQL Injection and how did you prevent it?</p>
+      </div><span class="qa-arrow">▾</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ar">SQL Injection هجوم يُدخل فيه المهاجم كود SQL ضار في حقول الإدخال. مثال: إدخال <code>' OR '1'='1' --</code> في حقل الإيميل قد يتجاوز المصادقة بالكامل. منعناه عبر <strong>PDO Prepared Statements</strong>: (1) نُجهّز الاستعلام مع placeholder (?) بدلاً من قيمة حقيقية. (2) MySQL يُحلّل الاستعلام ويخزنه. (3) نُمرر المعطيات منفصلةً عبر <code>execute()</code>. هكذا يُعامَل أي إدخال — مهما كان ضاراً — كبيانات وليس كأوامر SQL. قاعدة ذهبية: لا نسلسل بيانات المستخدم مع استعلامات SQL أبداً.</div>
+      <div class="qa-en">SQL Injection is an attack where malicious SQL code is inserted into input fields. Example: entering <code>' OR '1'='1' --</code> in the email field could completely bypass authentication. We prevented it via <strong>PDO Prepared Statements</strong>: (1) Prepare the query with a placeholder (?) instead of the actual value. (2) MySQL parses and stores the query structure. (3) Pass parameters separately via <code>execute()</code>. Any user input — no matter how malicious — is treated as DATA, never as SQL commands. Golden rule: NEVER concatenate user data directly into SQL queries.</div>
+    </div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q" onclick="tog(this)">
+      <div class="qa-qtxt">
+        <div class="qa-cat-tag">Architecture</div>
+        <h4>ما هي المعمارية ثلاثية الطبقات وما فوائدها؟</h4>
+        <p>What is Three-Tier Architecture and what are its benefits?</p>
+      </div><span class="qa-arrow">▾</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ar">المعمارية ثلاثية الطبقات تقسم النظام إلى: (1) <strong>طبقة العرض (Presentation)</strong>: HTML/CSS/JS — ما يراه المستخدم ويتفاعل معه. (2) <strong>طبقة التطبيق (Application)</strong>: PHP RESTful API — منطق الأعمال والمعالجة. (3) <strong>طبقة البيانات (Data)</strong>: MySQL — تخزين البيانات واسترجاعها. <strong>الفوائد:</strong> فصل المخاوف (Separation of Concerns) — يمكن تغيير قاعدة البيانات دون تغيير الواجهة. قابلية الصيانة والتوسع. سهولة الاختبار لكل طبقة بمعزل. إعادة استخدام الـ API مع تطبيقات مستقبلية (موبايل مثلاً).</div>
+      <div class="qa-en">Three-Tier Architecture divides the system into: (1) <strong>Presentation Layer</strong>: HTML/CSS/JS — what the user sees and interacts with. (2) <strong>Application Layer</strong>: PHP RESTful API — business logic and data processing. (3) <strong>Data Layer</strong>: MySQL — data storage and retrieval. <strong>Benefits:</strong> Separation of Concerns — you can change the database without touching the UI. Better maintainability and scalability. Each layer can be tested independently. The API can be reused by future applications (e.g., mobile app without changing the backend).</div>
+    </div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q" onclick="tog(this)">
+      <div class="qa-qtxt">
+        <div class="qa-cat-tag">API</div>
+        <h4>ما هو RESTful API ولماذا استخدمتموه؟</h4>
+        <p>What is RESTful API and why did you use it?</p>
+      </div><span class="qa-arrow">▾</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ar">REST (Representational State Transfer) هو أسلوب معماري للتواصل بين الواجهة الأمامية والخلفية. مزاياه: (1) <strong>Stateless</strong>: كل طلب مكتفٍ بذاته — لا يعتمد على طلبات سابقة. (2) <strong>HTTP Verbs</strong>: GET (قراءة)، POST (إنشاء)، PUT (تحديث)، DELETE (حذف) — واضح ومنطقي. (3) <strong>JSON</strong>: تنسيق بيانات خفيف ومقروء يعمل مع أي تقنية. (4) <strong>فصل الواجهة عن الخادم</strong>: يمكن تطوير Frontend وBackend مستقلَّين. طبقناه في 13 endpoint تغطي جميع وظائف النظام.</div>
+      <div class="qa-en">REST (Representational State Transfer) is an architectural style for Frontend-Backend communication. Benefits: (1) <strong>Stateless</strong>: each request is self-contained — doesn't depend on previous requests. (2) <strong>HTTP Verbs</strong>: GET (read), POST (create), PUT (update), DELETE (remove) — clear and logical. (3) <strong>JSON</strong>: lightweight, human-readable data format that works with any technology. (4) <strong>Frontend/Backend separation</strong>: both can be developed independently. We implemented it across 13 endpoints covering all system functions.</div>
+    </div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q" onclick="tog(this)">
+      <div class="qa-qtxt">
+        <div class="qa-cat-tag">Payment</div>
+        <h4>لماذا اخترتم Bitcoin كوسيلة دفع إضافية؟</h4>
+        <p>Why did you integrate Bitcoin as a payment method?</p>
+      </div><span class="qa-arrow">▾</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ar">السبب الرئيسي هو <strong>السياق الإقليمي الفلسطيني الفريد</strong>: القيود المصرفية تجعل الوصول لبوابات الدفع الدولية (Visa, PayPal, Stripe) صعباً أو مستحيلاً عملياً. Bitcoin كعملة رقمية لامركزية (Peer-to-Peer) لا تحتاج بنكاً وسيطاً ولا موافقة حكومية. وثّقنا هذا أكاديمياً في الفصل الثاني عبر Nakamoto (2008). من ناحية تقنية: نُولّد عنوان BTC فريد لكل حجز تلقائياً. هذا يوسع قاعدة العملاء ويعكس وعياً بالتحديات المالية الإقليمية الحقيقية.</div>
+      <div class="qa-en">The main reason is the <strong>unique Palestinian regional context</strong>: banking restrictions make international payment gateways (Visa, PayPal, Stripe) difficult or impossible in practice. Bitcoin as a decentralized peer-to-peer digital currency requires no banking intermediary or government approval. We documented this academically in Chapter 2 via Nakamoto (2008). Technically: we auto-generate a unique BTC address for each reservation. This expands the customer base and reflects genuine awareness of real regional financial challenges.</div>
+    </div>
+  </div>
+
+  <!-- GROUP 3: METHODOLOGY -->
+  <div class="qa-section-title">📋 أسئلة المنهجية والتصميم</div>
+
+  <div class="qa-card">
+    <div class="qa-q" onclick="tog(this)">
+      <div class="qa-qtxt">
+        <div class="qa-cat-tag">Methodology</div>
+        <h4>ما هو نهج التطوير الذي استخدمتموه ولماذا؟</h4>
+        <p>What development approach did you use and why?</p>
+      </div><span class="qa-arrow">▾</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ar">استخدمنا <strong>Agile-Inspired Incremental Development</strong> مستوحىً من Design Science Research (DSR) — Hevner et al. (2004). الطريقة التدريجية سمحت لنا بـ: (1) مراجعة مستمرة لكل مرحلة. (2) اكتشاف المشكلات مبكراً قبل التراكم. (3) تعديل المتطلبات بمرونة. المراحل: تحليل المتطلبات → تصميم النظام (UML) → تطوير الواجهة → تطوير الخادم → قاعدة البيانات → اختبار التكامل. لم نستخدم Waterfall الصارم لأن المتطلبات قد تتغير أثناء التطوير، وبدلاً من ذلك اعتمدنا على التكرار والتحسين.</div>
+      <div class="qa-en">We used <strong>Agile-Inspired Incremental Development</strong> based on Design Science Research (DSR) — Hevner et al. (2004). The iterative approach allowed: (1) Continuous review of each phase. (2) Early problem detection before they accumulate. (3) Flexible requirements adjustment. Phases: Requirements Analysis → System Design (UML) → Frontend Development → Backend Development → Database Implementation → Integration Testing. We avoided strict Waterfall because requirements may evolve during development — iterative refinement yields better results.</div>
+    </div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q" onclick="tog(this)">
+      <div class="qa-qtxt">
+        <div class="qa-cat-tag">Database</div>
+        <h4>لماذا اخترتم InnoDB وUTF8MB4 في قاعدة البيانات؟</h4>
+        <p>Why did you choose InnoDB engine and UTF8MB4 charset?</p>
+      </div><span class="qa-arrow">▾</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ar"><strong>InnoDB:</strong> محرك قاعدة بيانات MySQL الذي يدعم: (1) <strong>ACID Compliance</strong> — Atomicity, Consistency, Isolation, Durability. (2) <strong>Foreign Key Constraints</strong> — يضمن سلامة العلاقة بين الجداول (user_id في reservations يجب أن يكون في users). (3) <strong>Transaction Support</strong> — عمليات متعددة كوحدة واحدة. <strong>UTF8MB4:</strong> ترميز نصي يدعم جميع أحرف العربية الكاملة + الرموز التعبيرية (Emoji) بدقة. UTF-8 العادية لا تدعم بعض أحرف Unicode الخاصة التي قد تظهر في الأسماء أو الوصف العربي. هذا ضروري لمشروع ثنائي اللغة.</div>
+      <div class="qa-en"><strong>InnoDB:</strong> MySQL storage engine that supports: (1) <strong>ACID Compliance</strong> — Atomicity, Consistency, Isolation, Durability. (2) <strong>Foreign Key Constraints</strong> — ensures referential integrity (user_id in reservations must exist in users). (3) <strong>Transaction Support</strong> — multiple operations as a single atomic unit. <strong>UTF8MB4:</strong> Character encoding that supports all Arabic characters + Emoji correctly. Regular UTF-8 doesn't support some special Unicode characters that may appear in Arabic names or descriptions. Essential for a bilingual system.</div>
+    </div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q" onclick="tog(this)">
+      <div class="qa-qtxt">
+        <div class="qa-cat-tag">Scope</div>
+        <h4>ما هي قيود المشروع الحالية وما العمل المستقبلي؟</h4>
+        <p>What are the current limitations and future work?</p>
+      </div><span class="qa-arrow">▾</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ar"><strong>القيود الحالية:</strong> (1) نشر محلي فقط على Laragon — ليس على خادم إنتاج. (2) دفع Bitcoin محاكى — لا بوابة دفع حقيقية. (3) لا تطبيق موبايل. (4) لا إشعارات بريد إلكتروني حقيقية. (5) لا دعم متعدد الفروع. <strong>العمل المستقبلي:</strong> (1) تطبيق موبايل بـ React Native أو Flutter. (2) BTCPay Server لمعالجة Bitcoin الحقيقية. (3) محرك توصيات بالذكاء الاصطناعي. (4) نظام POS داخل المطعم. (5) لوحة تحليلات متقدمة. (6) معمارية متعددة الفروع.</div>
+      <div class="qa-en"><strong>Current Limitations:</strong> (1) Local deployment only on Laragon — not on production server. (2) Simulated Bitcoin payment — no real payment gateway. (3) No mobile application. (4) No real email notification system. (5) No multi-branch support. <strong>Future Work:</strong> (1) Mobile app with React Native or Flutter. (2) BTCPay Server for real Bitcoin processing. (3) AI-powered recommendation engine. (4) In-restaurant POS system. (5) Advanced analytics & BI dashboard. (6) Multi-branch architecture.</div>
+    </div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q" onclick="tog(this)">
+      <div class="qa-qtxt">
+        <div class="qa-cat-tag">Literature</div>
+        <h4>ما الفجوة في الأدبيات التي يسدّها مشروعكم؟</h4>
+        <p>What research gap does your project fill?</p>
+      </div><span class="qa-arrow">▾</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ar">الأدبيات والحلول التجارية الموجودة (OpenTable, Toast POS, Square) صُممت للسياق الغربي وتفتقر إلى: (1) <strong>دعم العربية RTL</strong> — لا تدعم اللغة العربية بشكل أصلي. (2) <strong>تصنيف مناسب للمأكولات الفلسطينية التراثية</strong> — لا تفهم السياق الثقافي. (3) <strong>خيارات دفع محلية</strong> — تعتمد على بوابات دفع غير متاحة في فلسطين. مشروعنا يُصمَّم خصيصاً لهذه البيئة الثقافية والجغرافية. هذا ما يميزه عن مراجعة الأدبيات ويثبت الحاجة إليه.</div>
+      <div class="qa-en">Existing literature and commercial solutions (OpenTable, Toast POS, Square) are designed for Western contexts and lack: (1) <strong>Arabic RTL support</strong> — no native Arabic language interface. (2) <strong>Appropriate categorization for Palestinian heritage cuisine</strong> — no cultural context understanding. (3) <strong>Locally-relevant payment options</strong> — rely on gateways unavailable in Palestine. Our project is specifically designed for this cultural and geographic environment — this is what differentiates it from the literature and justifies its need.</div>
+    </div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q" onclick="tog(this)">
+      <div class="qa-qtxt">
+        <div class="qa-cat-tag">Testing</div>
+        <h4>كيف تحققتم من صحة النظام؟ ما أنواع الاختبار المستخدمة؟</h4>
+        <p>How did you verify system correctness? What testing types were used?</p>
+      </div><span class="qa-arrow">▾</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ar">استخدمنا <strong>Manual Functional Testing</strong> عبر حالات اختبار إيجابية وسلبية. اختبرنا 4 وحدات رئيسية: المصادقة، القائمة، الحجز، الإدارة. <strong>الاختبارات الإيجابية</strong>: بيانات صحيحة تُنتج نتيجة متوقعة (تسجيل بنجاح، حجز نقدي/Bitcoin). <strong>الاختبارات السلبية</strong>: بيانات غير صالحة تُنتج رسالة خطأ مناسبة (كلمة مرور خاطئة، تاريخ ماضٍ، أكثر من 20 ضيف). أيضاً: اختبار أمان SQL Injection، اختبار التحكم بالوصول. النتيجة: 9/9 حالات = 100% نجاح.</div>
+      <div class="qa-en">We used <strong>Manual Functional Testing</strong> with positive and negative test cases. Tested 4 main modules: Authentication, Menu, Reservation, Admin. <strong>Positive tests</strong>: valid inputs produce expected results (successful registration, cash/Bitcoin reservation). <strong>Negative tests</strong>: invalid inputs produce appropriate error messages (wrong password, past date, 21+ guests). Also: SQL Injection security testing, Role-based access control testing. Result: 9/9 test cases = 100% success rate.</div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer style="background:var(--brown-dark);color:rgba(255,255,255,.45);text-align:center;padding:28px;font-size:.8rem;">
+  <p style="color:var(--gold-light);font-weight:700;margin-bottom:6px;">عبق التراث — نظام إدارة المطعم | Abaq Al-Turath Restaurant Management System</p>
+  <p>صالح حمادة جرغون · عبدالله محمد أبو فياض | جامعة الأقصى · بكالوريوس علم الحاسوب · مايو 2025</p>
+  <p style="margin-top:6px;font-size:.72rem;">شامل لكلا الملفين: التقرير الكامل (Word/PDF) والعرض التقديمي (PowerPoint 48 شريحة)</p>
+</footer>
+
+<script>
+function tog(el) {
+  const ans = el.nextElementSibling;
+  const arrow = el.querySelector('.qa-arrow');
+  const isOpen = ans.classList.contains('open');
+  document.querySelectorAll('.qa-ans.open').forEach(a => { a.classList.remove('open'); });
+  document.querySelectorAll('.qa-arrow').forEach(a => { a.style.transform = ''; });
+  if (!isOpen) { ans.classList.add('open'); arrow.style.transform = 'rotate(180deg)'; }
+}
+</script>
+</body>
+</html>
